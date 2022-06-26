@@ -7,8 +7,6 @@ import './styles.scss';
 import ThemeFormContainer from '../../Forms/ThemeForm/ThemeFormContainer';
 
 const Header = () => {
-
-  const dispatch = useDispatch()
   const { theme } = useSelector((state) => state.Theme)
   const memoizedTheme = useMemo(() => theme, [theme])
   console.log(memoizedTheme);
@@ -25,7 +23,7 @@ const Header = () => {
           a
         </SquareButton>
         <DropdownSquareButton text='asd' details={details} />
-        <ThemeFormContainer currentTheme={1}/>
+        <ThemeFormContainer currentTheme={memoizedTheme}/>
         <button className='header-button'>
         </button>
         <button className='header-button'>
