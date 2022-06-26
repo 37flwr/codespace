@@ -1,15 +1,21 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import DropdownSquareButton from '../../Buttons/DropdownSquareButton';
 import SquareButton from '../../Buttons/SquareButton';
+import { changeTheme } from '../../../store/actions';
 import './styles.scss';
 
 const Header = () => {
-  // const dispatch = useDispatch()
-  // const { layout } = useSelector((state) => state.Layout)
-  // const memoizedLayout = useMemo(() => layout, [layout])
 
-  // useEffect(() => dispatch())
+  const dispatch = useDispatch()
+  const { theme } = useSelector((state) => state.Theme)
+  const memoizedLayout = useMemo(() => theme, [theme])
+  console.log(memoizedLayout);
+
+  // useEffect(() => 
+  //   dispatch(changeTheme()), [dispatch])
+  const details = ['asd', 'asd']
+  
   return (
     <section id='header'>
       <div id='header-logo' className='text-heading'>
@@ -19,7 +25,7 @@ const Header = () => {
         <SquareButton>
           a
         </SquareButton>
-        <DropdownSquareButton text='asd' details={['asd', 'asd']} />
+        <DropdownSquareButton text='asd' details={details} />
         <button className='header-button'>
         </button>
         <button className='header-button'>

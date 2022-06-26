@@ -7,7 +7,7 @@ import store from './store';
 
 function App() {
   return (
-    // <Provider store={store}>
+    <Provider store={store}>
       <Router>
         <Layout>
             <Routes>
@@ -24,7 +24,7 @@ function App() {
             </Routes>
         </Layout>
       </Router>
-    // </Provider>
+    </Provider>
   );
 }
 
