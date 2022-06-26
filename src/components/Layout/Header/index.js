@@ -10,8 +10,6 @@ const Header = () => {
   const { theme } = useSelector((state) => state.Theme)
   const memoizedTheme = useMemo(() => theme, [theme])
   console.log(memoizedTheme);
-
-  const details = ['asd', 'asd']
   
   return (
     <section id='header'>
@@ -22,12 +20,9 @@ const Header = () => {
         <SquareButton>
           a
         </SquareButton>
-        <DropdownSquareButton text='asd' details={details} />
-        <ThemeFormContainer currentTheme={memoizedTheme}/>
-        <button className='header-button'>
-        </button>
-        <button className='header-button'>
-        </button>
+        <DropdownSquareButton text='asd'>
+          <ThemeFormContainer currentTheme={memoizedTheme}/>
+        </DropdownSquareButton>
       </div>
     </section>
   )

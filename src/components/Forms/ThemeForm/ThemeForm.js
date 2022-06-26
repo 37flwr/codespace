@@ -5,17 +5,24 @@ import './styles.scss'
 
 const formFields = () => [
     {
-        id: 1,
+        id: 'editors-top',
         name: 'theme',
         type: 'radio',
-        label: 'Name',
+        label: 'Top',
         show: true
     },
     {
-        id: 2,
+        id: 'editors-left',
         name: 'theme',
         type: 'radio',
-        label: 'Name',
+        label: 'Left',
+        show: true
+    },
+    {
+        id: 'editors-right',
+        name: 'theme',
+        type: 'radio',
+        label: 'Right',
         show: true
     },
 ].filter(({show}) => show)

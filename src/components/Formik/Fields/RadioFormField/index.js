@@ -7,6 +7,7 @@ const RadioFormField = (props) => {
         component,
         name,
         id,
+        label,
         customContainerClassName,
         customFieldClassName
     } = props
@@ -20,7 +21,7 @@ const RadioFormField = (props) => {
             type='radio'
             className='radio-field'
         />
-        <label className={classNames("radio-label", customFieldClassName)} htmlFor={id}>{name}</label>
+        <label className={classNames("radio-label", customFieldClassName)} htmlFor={id}>{label}</label>
     </div>
   )
 }

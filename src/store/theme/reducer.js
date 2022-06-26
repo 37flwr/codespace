@@ -4,7 +4,7 @@ import {
 
 const initialState = {
     error: false,
-    theme: 1,
+    theme: 'editors-top',
 }
 
 const redactors = (state = initialState, action) => {
