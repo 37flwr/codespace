@@ -1,12 +1,11 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { changeTheme } from './actions';
+import { changeThemeSuccess } from './actions';
 import { CHANGE_THEME } from './actionTypes';
 
 function* changeThemeSaga({ payload }) {
     try {
-        console.log('Success');
-        yield put(changeTheme(payload));
+        yield put(changeThemeSuccess(payload));
 
     } catch (error) {
         console.log(error)

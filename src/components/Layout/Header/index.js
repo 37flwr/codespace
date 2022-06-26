@@ -4,16 +4,15 @@ import DropdownSquareButton from '../../Buttons/DropdownSquareButton';
 import SquareButton from '../../Buttons/SquareButton';
 import { changeTheme } from '../../../store/actions';
 import './styles.scss';
+import ThemeFormContainer from '../../Forms/ThemeForm/ThemeFormContainer';
 
 const Header = () => {
 
   const dispatch = useDispatch()
   const { theme } = useSelector((state) => state.Theme)
-  const memoizedLayout = useMemo(() => theme, [theme])
-  console.log(memoizedLayout);
+  const memoizedTheme = useMemo(() => theme, [theme])
+  console.log(memoizedTheme);
 
-  // useEffect(() => 
-  //   dispatch(changeTheme()), [dispatch])
   const details = ['asd', 'asd']
   
   return (
@@ -26,6 +25,7 @@ const Header = () => {
           a
         </SquareButton>
         <DropdownSquareButton text='asd' details={details} />
+        <ThemeFormContainer currentTheme={1}/>
         <button className='header-button'>
         </button>
         <button className='header-button'>

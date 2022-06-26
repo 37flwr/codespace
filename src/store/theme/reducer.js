@@ -1,5 +1,5 @@
 import {
-    CHANGE_THEME,
+    CHANGE_THEME, CHANGE_THEME_SUCCESS,
 } from './actionTypes';
 
 const initialState = {
@@ -10,6 +10,10 @@ const initialState = {
 const redactors = (state = initialState, action) => {
     switch(action.type) {
         case CHANGE_THEME:
+            return {
+                ...state,
+            }
+        case CHANGE_THEME_SUCCESS:
             return {
                 ...state,
                 theme: action.payload,
