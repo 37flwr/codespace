@@ -20,7 +20,7 @@ const Header = () => {
         <SquareButton>
           a
         </SquareButton>
-        <DropdownSquareButton text='asd'>
+        <DropdownSquareButton text='asd' customId='theme-button' >
           <ThemeFormContainer currentTheme={memoizedTheme}/>
         </DropdownSquareButton>
       </div>

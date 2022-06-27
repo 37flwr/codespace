@@ -10,7 +10,13 @@
 
   position: relative;
 
+  cursor: pointer;
+
   .radio-field {
     display: none;
+  }
+
+  .radio-label {
+    cursor: pointer;
   }
 }
