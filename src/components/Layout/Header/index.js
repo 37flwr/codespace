@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import DropdownSquareButton from '../../Buttons/DropdownSquareButton';
 import SquareButton from '../../Buttons/SquareButton';
-import { changeTheme } from '../../../store/actions';
-import './styles.scss';
+import IconSettings from '../../../assets/Settings.svg';
 import ThemeFormContainer from '../../Forms/ThemeForm/ThemeFormContainer';
+import './styles.scss';
 
 const Header = () => {
   const { theme } = useSelector((state) => state.Theme)
@@ -17,12 +17,12 @@ const Header = () => {
         CodeBay
       </div>
       <div id='header-buttons'>
-        <SquareButton>
-          a
-        </SquareButton>
-        <DropdownSquareButton text='asd' customId='theme-button' >
+        <DropdownSquareButton content={memoizedTheme} customId='theme-button' >
           <ThemeFormContainer currentTheme={memoizedTheme}/>
         </DropdownSquareButton>
+        <SquareButton>
+          <img src={IconSettings} alt="" />
+        </SquareButton>
       </div>
     </section>
   )
