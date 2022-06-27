@@ -15,6 +15,11 @@
       height: 75%;
       width: 75%;
       pointer-events: none;
+      margin-top: 3px;
+
+      svg {
+        fill: var(--background-additional);
+      }
     }
   }
 
@@ -32,7 +37,6 @@
       height: 35px;
       width: 35px;
       border-radius: 5px;
-      background-color: var(--background-transparent);
       display: flex;
       justify-content: center;
       align-items: center;

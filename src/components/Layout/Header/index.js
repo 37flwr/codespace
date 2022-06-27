@@ -9,7 +9,6 @@ import './styles.scss';
 const Header = () => {
   const { theme } = useSelector((state) => state.Theme)
   const memoizedTheme = useMemo(() => theme, [theme])
-  console.log(memoizedTheme);
   
   return (
     <section id='header'>
@@ -20,7 +19,7 @@ const Header = () => {
         <DropdownSquareButton content={memoizedTheme} customId='theme-button' >
           <ThemeFormContainer currentTheme={memoizedTheme}/>
         </DropdownSquareButton>
-        <SquareButton>
+        <SquareButton path='/settings'>
           <img src={IconSettings} alt="" />
         </SquareButton>
       </div>

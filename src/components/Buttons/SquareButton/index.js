@@ -17,9 +17,7 @@ const SquareButton = (props) => {
                 </Link>
             :
                 <button className={`round-button ${customClassName}`} onClick={() => onClick()}>
-                    <div className='round-button-content'>
-                        {children}
-                    </div>
+                    {children}
                 </button>
             }
         </>

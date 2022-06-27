@@ -32,8 +32,6 @@ const DropdownSquareButton = ({ content, customClassName, customId, details, cli
         return 'Theme'
     }
 
-    console.log(content);
-
     return (
         <div className='square-button-wrapper'>
             <button className={classNames('square-button', customClassName)} onClick={() => handleClick()} id={customId}>
