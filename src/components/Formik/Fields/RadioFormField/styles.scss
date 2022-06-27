@@ -1,0 +1,32 @@
+.radio-input-container {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: var(--text-main);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  cursor: pointer;
+
+  .radio-field {
+    display: none;
+  }
+
+  .radio-label {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 75%;
+      height: 75%;
+    }
+  }
+}

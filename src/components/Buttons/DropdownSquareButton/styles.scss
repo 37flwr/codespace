@@ -1,0 +1,49 @@
+.square-button-wrapper {
+  position: relative;
+
+  .square-button {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+
+    img {
+      height: 75%;
+      width: 75%;
+      pointer-events: none;
+      margin-top: 3px;
+
+      svg {
+        fill: var(--background-additional);
+      }
+    }
+  }
+
+  .button-details {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    .button-details-item {
+      height: 35px;
+      width: 35px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .active {
+    display: flex;
+    gap: 2px;
+  }
+}

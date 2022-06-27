@@ -1,0 +1,19 @@
+.round-button {
+  width: 35px;
+  height: 35px;
+  background-color: var(--text-main);
+
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 65%;
+    height: 65%;
+  }
+}

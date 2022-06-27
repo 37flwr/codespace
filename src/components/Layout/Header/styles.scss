@@ -1,0 +1,28 @@
+#header {
+  width: 100vw;
+  height: 60px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  background-color: var(--background-additional);
+
+  #header-logo {
+    grid-column-start: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-main);
+
+    margin-bottom: 5px;
+  }
+
+  #header-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
