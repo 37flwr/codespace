@@ -9,6 +9,7 @@ const SquareButton = (props) => {
         customClassName, 
         onClick,
     } = props
+    
     return (
         <>
             {path?
@@ -16,7 +17,7 @@ const SquareButton = (props) => {
                     {children}
                 </Link>
             :
-                <button className={`round-button ${customClassName}`} onClick={() => onClick()}>
+                <button className={classNames('round-button', customClassName)} onClick={() => onClick()}>
                     {children}
                 </button>
             }

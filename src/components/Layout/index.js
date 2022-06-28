@@ -1,10 +1,10 @@
 import Header from './Header';
 import './styles.scss';
 
-const Layout = ({ children, themeHandler }) => {
+const Layout = ({ children, currentTheme, themeHandler }) => {
   return (
     <>
-        <Header themeHandler={themeHandler} />
+        <Header themeHandler={themeHandler} currentTheme={currentTheme} />
         {children}
     </>
   )

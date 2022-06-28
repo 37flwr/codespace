@@ -1,11 +1,13 @@
-.app {
-  transition: all 0.5s;
+.App {
+  transition: all 10s;
 }
 
 :root {
-  --background-additional: #191e2a;
-  --background-transparent: #555;
-  --text-main: #fff;
+  --background-primary: #1e2749;
+  --background-additional: #273469;
+  --background-transparent: #30343f;
+  --text-primary: #fafaff;
+  --text-additional: #e4d9ff;
 
   // #F15025
   // #FFFFFF

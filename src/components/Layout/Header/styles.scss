@@ -2,10 +2,12 @@
   width: 100vw;
   height: 60px;
 
+  transition: all 0.5s;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  background-color: var(--background-additional);
+  background-color: var(--background-primary);
 
   #header-logo {
     grid-column-start: 2;
@@ -14,7 +16,7 @@
     justify-content: center;
     align-items: center;
 
-    color: var(--text-main);
+    color: var(--text-primary);
 
     margin-bottom: 5px;
   }
