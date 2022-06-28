@@ -29,9 +29,9 @@ const EditorPage = () => {
   return (
     <div className={classNames("editor-page", memoizedTheme)}>
       <div className="editors-group">
-        <Editor value={html} setState={setHtml} lang='html' />
-        <Editor value={css} setState={setCss} lang='css' />
-        <Editor value={js} setState={setJs} lang='js' />
+        <Editor setState={setHtml} lang='html' />
+        <Editor setState={setCss} lang='css' />
+        <Editor setState={setJs} lang='js' />
       </div>
       <iframe 
         srcDoc={srcDoc}

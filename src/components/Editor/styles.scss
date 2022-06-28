@@ -1,0 +1,29 @@
+.editor {
+  background-color: var(--background-bonus);
+  border-radius: 10px;
+  position: relative;
+
+  .editor-heading {
+    text-transform: uppercase;
+    color: var(--text-primary);
+    width: calc(100% - 10px);
+    height: 35px;
+    background-color: var(--text-additional);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    position: sticky;
+    top: 0;
+  }
+  .cm-theme {
+    padding-top: 10px;
+    width: 100%;
+    height: calc(100% - 45px);
+    overflow: auto;
+
+    .cm-editor {
+      outline: none !important;
+    }
+  }
+}

@@ -8,20 +8,18 @@
 
 .editors-top {
   flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - 60px);
 
   .editors-group {
     width: 100%;
-    height: 50%;
+    height: 50vw;
     display: flex;
     justify-content: space-around;
 
     .editor {
       width: 32%;
       height: 100%;
-
-      .cm-theme {
-        width: 100%;
-      }
     }
   }
 
@@ -37,6 +35,14 @@
   .editors-group {
     width: 50%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .editor {
+      width: 100%;
+      height: 32%;
+    }
   }
 
   iframe {
