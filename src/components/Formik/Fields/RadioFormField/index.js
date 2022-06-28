@@ -21,7 +21,7 @@ const RadioFormField = (props) => {
             type='radio'
             className='radio-field'
         />
-        <label className={classNames("radio-label", customFieldClassName)} htmlFor={id}><img src={label} alt="" /></label>
+        <label className={classNames("radio-label", customFieldClassName)} htmlFor={id}>{label}</label>
     </div>
   )
 }

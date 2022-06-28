@@ -1,7 +1,7 @@
-.round-button {
+.square-button {
   width: 35px;
   height: 35px;
-  background-color: var(--background-transparent);
+  background-color: var(--background-primary);
 
   border: none;
   border-radius: 5px;
@@ -13,4 +13,7 @@
   align-items: center;
 
   transition: all 0.5s;
+  svg {
+    color: var(--text-primary);
+  }
 }

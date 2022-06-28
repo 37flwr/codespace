@@ -11,15 +11,13 @@
     text-decoration: none;
     cursor: pointer;
 
-    img {
+    svg {
       height: 75%;
       width: 75%;
       pointer-events: none;
       margin-top: 3px;
 
-      svg {
-        fill: var(--background-additional);
-      }
+      color: var(--text-primary);
     }
   }
 

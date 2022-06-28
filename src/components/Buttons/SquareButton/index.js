@@ -13,11 +13,11 @@ const SquareButton = (props) => {
     return (
         <>
             {path?
-                <Link to={path} className={classNames(`round-button`, customClassName)}>
+                <Link to={path} className={classNames(`square-button`, customClassName)}>
                     {children}
                 </Link>
             :
-                <button className={classNames('round-button', customClassName)} onClick={() => onClick()}>
+                <button className={classNames('square-button', customClassName)} onClick={() => onClick()}>
                     {children}
                 </button>
             }
