@@ -1,3 +1,7 @@
+.app {
+  transition: all 0.5s;
+}
+
 :root {
   --background-additional: #191e2a;
   --background-transparent: #555;
@@ -11,4 +15,10 @@
 
 .text-heading {
   font-size: 25px;
+}
+
+[data-theme="dark"] {
+  --background-additional: #555;
+  --background-transparent: #191e2a;
+  --text-main: #000;
 }
