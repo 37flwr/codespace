@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import { useDispatch } from 'react-redux';
-import { changeTheme } from '../../../store/actions';
-import IconEditorsTop from '../../../assets/EditorsTop.svg';
-import IconEditorsLeft from '../../../assets/EditorsLeft.svg';
-import IconEditorsRight from '../../../assets/EditorsRight.svg';
+import { ReactComponent as IconEditorsTop } from '../../../assets/EditorsTop.svg';
+import { ReactComponent as IconEditorsLeft } from '../../../assets/EditorsLeft.svg';
+import { ReactComponent as IconEditorsRight } from '../../../assets/EditorsRight.svg';
 import './styles.scss';
 
 const DropdownSquareButton = ({ content, customClassName, customId, details, clickHandler, children }) => {
@@ -21,13 +19,13 @@ const DropdownSquareButton = ({ content, customClassName, customId, details, cli
         }
     }
 
-      const themeIcon = (theme) => {
+    const themeIcon = (theme) => {
         if(theme === 'editors-top') {
-        return <img src={IconEditorsTop} alt="" />
+        return <IconEditorsTop />
         } else if (theme === 'editors-left') {
-        return <img src={IconEditorsLeft} alt="" />
+        return <IconEditorsLeft />
         } else if (theme === 'editors-right') {
-        return <img src={IconEditorsRight} alt="" />
+        return <IconEditorsRight />
         }
         return 'Theme'
     }

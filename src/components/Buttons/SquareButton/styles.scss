@@ -1,7 +1,7 @@
-.round-button {
+.square-button {
   width: 35px;
   height: 35px;
-  background-color: var(--text-main);
+  background-color: var(--background-primary);
 
   border: none;
   border-radius: 5px;
@@ -12,8 +12,8 @@
   justify-content: center;
   align-items: center;
 
-  img {
-    width: 65%;
-    height: 65%;
+  transition: all 0.5s;
+  svg {
+    color: var(--text-primary);
   }
 }

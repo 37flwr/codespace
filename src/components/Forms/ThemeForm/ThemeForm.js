@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Form } from 'formik';
 import { RadioFormField } from '../../Formik/Fields';
-import IconEditorsTop from '../../../assets/EditorsTop.svg';
-import IconEditorsLeft from '../../../assets/EditorsLeft.svg'
-import IconEditorsRight from '../../../assets/EditorsRight.svg'
+import { ReactComponent as IconEditorsTop } from '../../../assets/EditorsTop.svg';
+import { ReactComponent as IconEditorsLeft } from '../../../assets/EditorsLeft.svg'
+import { ReactComponent as IconEditorsRight } from '../../../assets/EditorsRight.svg'
 import './styles.scss';
 
 const formFields = () => [
@@ -11,21 +11,21 @@ const formFields = () => [
         id: 'editors-top',
         name: 'theme',
         type: 'radio',
-        label: IconEditorsTop,
+        label: <IconEditorsTop />,
         show: true
     },
     {
         id: 'editors-left',
         name: 'theme',
         type: 'radio',
-        label: IconEditorsLeft,
+        label: <IconEditorsLeft />,
         show: true
     },
     {
         id: 'editors-right',
         name: 'theme',
         type: 'radio',
-        label: IconEditorsRight,
+        label: <IconEditorsRight />,
         show: true
     },
 ].filter(({show}) => show)

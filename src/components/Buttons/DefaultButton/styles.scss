@@ -1,0 +1,30 @@
+.default-button {
+  all: unset;
+
+  height: 35px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  cursor: pointer;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.filled {
+  width: 120px;
+  background-color: var(--text-primary);
+  color: var(--background-primary);
+}
+
+.unfilled {
+  color: var(--text-primary);
+}

@@ -2,7 +2,7 @@ import './styles.scss';
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <section>HomePage</section>
   )
 }
 

@@ -1,14 +1,26 @@
-:root {
-  --background-additional: #191e2a;
-  --background-transparent: #555;
-  --text-main: #fff;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
 
-  // #F15025
-  // #FFFFFF
-  // #E6E8E6
-  // #CED0CE
+.App {
+  transition: all 10s;
+  background-color: var(--background-primary);
+}
+
+:root {
+  --background-primary: #d7e3fc;
+  --background-additional: #7b7d81;
+  --background-bonus: #ccdbfd;
+  --text-primary: #000;
+  --text-additional: #e2eafc;
 }
 
 .text-heading {
   font-size: 25px;
+}
+
+[data-theme="dark"] {
+  --background-primary: #0e0f11;
+  --background-additional: #1f252f;
+  --background-bonus: #343d43;
+  --text-primary: #fff;
+  --text-additional: #37393d;
 }
