@@ -4,15 +4,15 @@ import classNames from 'classnames'
 
 import './styles.scss'
 
-const DefaultButton = ({ text, icon, type, onClick, style }) => {
+const DefaultButton = ({ text, icon, type, onClick, customClassName }) => {
   return (
     type === 'button' ?
-        <button onClick={() => onClick()} className={classNames('default-button', style)}>
+        <button onClick={() => onClick()} className={classNames('default-button', customClassName)}>
             {icon}
             {text}
         </button>
     :
-        <Link to={onClick} className={classNames('default-button', style)}>
+        <Link to={onClick} className={classNames('default-button', customClassName)}>
             {icon}
             {text}
         </Link>
