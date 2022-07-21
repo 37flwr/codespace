@@ -27,7 +27,7 @@ const EditorPage = () => {
   const memoizedTheme = useMemo(() => theme, [theme])
 
   return (
-    <div className={classNames("editor-page", memoizedTheme)}>
+    <section className={classNames("editor-page", memoizedTheme)}>
       <div className="editors-group">
         <Editor setState={setHtml} lang='html' />
         <Editor setState={setCss} lang='css' />
@@ -41,7 +41,7 @@ const EditorPage = () => {
         width='300px'
         height='300px'
       />
-    </div>
+    </section>
   )
 }
 
