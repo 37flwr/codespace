@@ -3,12 +3,38 @@ import { useSelector } from 'react-redux';
 import ThemeFormContainer from '../../Forms/ThemeForm/ThemeFormContainer';
 import DropdownSquareButton from '../../Buttons/DropdownSquareButton';
 import SquareButton from '../../Buttons/SquareButton';
-import {  ReactComponent as CodespaceLogo } from '../../../assets/CodespaceLogo.svg'
+import { ReactComponent as CodespaceLogo } from '../../../assets/CodespaceLogo.svg'
 import { ReactComponent as IconSettings } from '../../../assets/Settings.svg';
 import { ReactComponent as IconLightTheme } from '../../../assets/LightTheme.svg';
 import { ReactComponent as IconDarkTheme } from '../../../assets/DarkTheme.svg';
+import { ReactComponent as IconExplore} from '../../../assets/Explore.svg';
+import { ReactComponent as IconDiscord} from '../../../assets/Discord.svg';
 
 import './styles.scss';
+import DefaultButton from '../../Buttons/Button';
+
+const headerButtons = [
+  {
+    text: 'Explore',
+    Icon: IconExplore,
+    type: 'button',
+    onClick: '/asd',
+    style: 'unfilled'
+  },
+  {
+    text: 'Discord',
+    Icon: IconDiscord,
+    type: 'button',
+    onClick: '/asd',
+    style: 'unfilled'
+  },
+  {
+    text: '</> Code',
+    type: 'button',
+    onClick: '/asd',
+    style: 'filled'
+  }
+]
 
 const Header = ({ themeHandler, currentTheme }) => {
   const { theme } = useSelector((state) => state.Theme)
@@ -50,7 +76,9 @@ const Header = ({ themeHandler, currentTheme }) => {
           </>
         :
           <div>
-
+            {headerButtons.map(({Icon, ...buttonProps}, idx) => 
+              <DefaultButton key={idx} icon={Icon && <Icon />} {...buttonProps} />
+            )}
           </div>
         }
       </div>
