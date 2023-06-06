@@ -8,7 +8,7 @@ import "./styles.scss";
 const EditorPage = () => {
   const codeState = useCodeState();
 
-  const { theme } = useSelector((state) => state.Theme);
+  const { theme } = useSelector((state: any) => state.Theme);
   const memoizedTheme = useMemo(() => theme, [theme]);
 
   return (

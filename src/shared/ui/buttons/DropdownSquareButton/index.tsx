@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
 import classNames from "classnames";
 import { ReactComponent as IconEditorsTop } from "../../../assets/svg/EditorsTop.svg";
 import { ReactComponent as IconEditorsLeft } from "../../../assets/svg/EditorsLeft.svg";
 import { ReactComponent as IconEditorsRight } from "../../../assets/svg/EditorsRight.svg";
 import "./styles.scss";
 
+interface IDropdownSquareButton extends PropsWithChildren {
+  content: string;
+  customClassName?: string;
+  customId: string;
+}
+
 const DropdownSquareButton = ({
   content,
   customClassName,
   customId,
-  details,
-  clickHandler,
   children,
-}) => {
+}: IDropdownSquareButton) => {
   const [active, toggleActive] = useState(false);
   const handleClick = () => {
     toggleActive(!active);
@@ -26,7 +30,7 @@ const DropdownSquareButton = ({
     }
   };
 
-  const themeIcon = (theme) => {
+  const themeIcon = (theme: string) => {
     if (theme === "editors-top") {
       return <IconEditorsTop />;
     } else if (theme === "editors-left") {

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const useCodeState = () => {
-  const [html, setHtml] = useState("");
-  const [css, setCss] = useState("");
-  const [js, setJs] = useState("");
-  const [srcDoc, setSrcDoc] = useState("");
+  const [html, setHtml] = useState<string>("");
+  const [css, setCss] = useState<string>("");
+  const [js, setJs] = useState<string>("");
+  const [srcDoc, setSrcDoc] = useState<string>("");
 
   useEffect(() => {
     const timeout = setTimeout(() => {

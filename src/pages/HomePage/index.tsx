@@ -15,7 +15,7 @@ const HomePage = () => {
         </h4>
         <DefaultButton
           text="</> Code"
-          onClick="/editor"
+          path="/editor"
           customClassName="filled"
         />
       </div>

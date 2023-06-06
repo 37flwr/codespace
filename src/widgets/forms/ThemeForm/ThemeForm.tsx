@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { FC, SVGProps, useEffect } from "react";
 import { Form } from "formik";
 import { RadioFormField } from "../../../entities/formik/fields";
 
@@ -7,6 +7,14 @@ import { ReactComponent as IconEditorsLeft } from "../../../shared/assets/svg/Ed
 import { ReactComponent as IconEditorsRight } from "../../../shared/assets/svg/EditorsRight.svg";
 
 import "./styles.scss";
+
+interface IFormField {
+  id: string;
+  name: string;
+  type: string;
+  label: JSX.Element;
+  show: boolean;
+}
 
 const formFields = () =>
   [
@@ -33,18 +41,18 @@ const formFields = () =>
     },
   ].filter(({ show }) => show);
 
-const renderRadioFormField = ({ ...fieldProps }) => (
-  <RadioFormField key={fieldProps.id} {...fieldProps} />
+const renderRadioFormField = (fieldProps: IFormField) => (
+  <RadioFormField {...fieldProps} key={fieldProps.id} />
 );
 
-const ThemeForm = ({ values }) => {
+const ThemeForm = ({ values }: any) => {
   useEffect(() => {
-    document.getElementById("theme-form-button").click();
+    document.getElementById("theme-form-button")?.click();
   }, [values]);
 
   return (
     <Form className="theme-form" id="theme-form">
-      {formFields({ values }).map(renderRadioFormField)}
+      {formFields().map(renderRadioFormField)}
       <button type="submit" id="theme-form-button" />
     </Form>
   );
