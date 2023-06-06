@@ -1,0 +1,19 @@
+@keyframes fadeIn {
+  20% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 100;
+  }
+}
+
+.typer {
+  white-space: pre-wrap;
+
+  &::after {
+    content: '|';
+    font-weight: bold;
+    color: var(--background-additional);
+    animation: fadeIn 1s forwards infinite;
+  }
+}
