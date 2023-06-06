@@ -1,7 +1,8 @@
-import classNames from "classnames";
-import { PropsWithChildren } from "react";
-import { Link } from "react-router-dom";
-import "./styles.scss";
+import classNames from 'classnames';
+import { type FC, type PropsWithChildren } from 'react';
+import { Link } from 'react-router-dom';
+
+import './styles.scss';
 
 interface ISquareButton extends PropsWithChildren {
   path?: string;
@@ -9,15 +10,10 @@ interface ISquareButton extends PropsWithChildren {
   onClick?: () => void;
 }
 
-const SquareButton = ({
-  children,
-  path,
-  customClassName,
-  onClick,
-}: ISquareButton) => {
-  if (path) {
+const SquareButton: FC<ISquareButton> = ({ children, path, customClassName, onClick }) => {
+  if (path !== null && path !== undefined) {
     return (
-      <Link to={path} className={classNames(`square-button`, customClassName)}>
+      <Link to={path} className={classNames('square-button', customClassName)}>
         {children}
       </Link>
     );
@@ -25,8 +21,10 @@ const SquareButton = ({
 
   return (
     <button
-      className={classNames("square-button", customClassName)}
-      onClick={() => onClick && onClick()}
+      className={classNames('square-button', customClassName)}
+      onClick={() => {
+        onClick?.();
+      }}
     >
       {children}
     </button>

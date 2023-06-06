@@ -1,2 +1,2 @@
 // theme
-export * from './theme/actions'
+export * from './theme/actions';

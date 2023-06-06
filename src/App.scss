@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -25,7 +25,7 @@ body {
   font-size: 25px;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --background-primary: #0e0f11;
   --background-additional: #7b7d81;
   --background-bonus: #343d43;

@@ -28,7 +28,7 @@
     .hero-heading {
       margin: 0;
 
-      font-family: "Rubik", sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       font-size: 56px;
       color: var(--text-primary);
@@ -39,7 +39,7 @@
       width: 35%;
       margin: 0 0 10px 0;
 
-      font-family: "Rubik", sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 400;
       font-size: 24px;
       color: var(--text-primary);
@@ -77,11 +77,7 @@
       width: 1440px;
       height: 540px;
 
-      background: linear-gradient(
-        180deg,
-        rgba(14, 15, 17, 0) 0%,
-        #0e0f11 67.19%
-      );
+      background: linear-gradient(180deg, rgba(14, 15, 17, 0) 0%, #0e0f11 67.19%);
     }
 
     .snippet {
@@ -97,7 +93,7 @@
       background: #1c1d1f;
       border-radius: 20px 20px 0px 0px;
 
-      font-family: "Rubik", sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 400;
       font-size: 16px;
       color: var(--background-additional);
@@ -110,7 +106,7 @@
       user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
         padding: 3px; /* control the border thickness */

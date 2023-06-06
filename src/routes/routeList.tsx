@@ -1,20 +1,20 @@
-import { useRoutes } from "react-router";
+import { useRoutes } from 'react-router';
 
-import EditorPage from "../pages/EditorPage";
-import HomePage from "../pages/HomePage";
+import EditorPage from '../pages/EditorPage';
+import HomePage from '../pages/HomePage';
 
 const publicRoutes = [
   {
-    path: "/",
+    path: '/',
     element: <HomePage />,
   },
   {
-    path: "/editor",
+    path: '/editor',
     element: <EditorPage />,
   },
 ];
 
-const AppRoutes = () => {
+const AppRoutes = (): JSX.Element | null => {
   return useRoutes(publicRoutes);
 };
 

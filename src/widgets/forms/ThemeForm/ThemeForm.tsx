@@ -1,12 +1,12 @@
-import { FC, SVGProps, useEffect } from "react";
-import { Form } from "formik";
-import { RadioFormField } from "../../../entities/formik/fields";
+import { type FC, useEffect } from 'react';
+import { Form } from 'formik';
+import { RadioFormField } from '../../../entities/formik/fields';
 
-import { ReactComponent as IconEditorsTop } from "../../../shared/assets/svg/EditorsTop.svg";
-import { ReactComponent as IconEditorsLeft } from "../../../shared/assets/svg/EditorsLeft.svg";
-import { ReactComponent as IconEditorsRight } from "../../../shared/assets/svg/EditorsRight.svg";
+import { ReactComponent as IconEditorsTop } from '../../../shared/assets/svg/EditorsTop.svg';
+import { ReactComponent as IconEditorsLeft } from '../../../shared/assets/svg/EditorsLeft.svg';
+import { ReactComponent as IconEditorsRight } from '../../../shared/assets/svg/EditorsRight.svg';
 
-import "./styles.scss";
+import './styles.scss';
 
 interface IFormField {
   id: string;
@@ -16,38 +16,38 @@ interface IFormField {
   show: boolean;
 }
 
-const formFields = () =>
+const formFields = (): IFormField[] =>
   [
     {
-      id: "editors-top",
-      name: "theme",
-      type: "radio",
+      id: 'editors-top',
+      name: 'theme',
+      type: 'radio',
       label: <IconEditorsTop />,
       show: true,
     },
     {
-      id: "editors-left",
-      name: "theme",
-      type: "radio",
+      id: 'editors-left',
+      name: 'theme',
+      type: 'radio',
       label: <IconEditorsLeft />,
       show: true,
     },
     {
-      id: "editors-right",
-      name: "theme",
-      type: "radio",
+      id: 'editors-right',
+      name: 'theme',
+      type: 'radio',
       label: <IconEditorsRight />,
       show: true,
     },
   ].filter(({ show }) => show);
 
-const renderRadioFormField = (fieldProps: IFormField) => (
+const renderRadioFormField: FC<IFormField> = (fieldProps) => (
   <RadioFormField {...fieldProps} key={fieldProps.id} />
 );
 
-const ThemeForm = ({ values }: any) => {
+const ThemeForm: FC<{ values: any }> = ({ values }) => {
   useEffect(() => {
-    document.getElementById("theme-form-button")?.click();
+    document.getElementById('theme-form-button')?.click();
   }, [values]);
 
   return (

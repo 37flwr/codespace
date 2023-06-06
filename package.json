@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@codemirror/lang-css": "^6.0.0",
-    "@codemirror/lang-html": "^6.1.0",
-    "@codemirror/lang-javascript": "^6.0.0",
+    "@codemirror/lang-css": "^6.2.0",
+    "@codemirror/lang-html": "^6.4.4",
+    "@codemirror/lang-javascript": "^6.1.9",
     "@lezer/highlight": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -14,14 +14,16 @@
     "@uiw/react-codemirror": "^4.9.4",
     "classnames": "^2.3.1",
     "cm": "^0.3.2",
-    "codemirror": "^6.0.0",
+    "codemirror": "^6.0.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "formik": "^2.2.9",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
-    "react-codemirror": "^1.0.0",
-    "react-codemirror2": "^7.2.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0",
+    "react-router": "^6.11.2",
+    "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
@@ -35,13 +37,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint src/*",
+    "format": "npx prettier --write .",
+    "superlint": "npx prettier --write . && eslint src/*"
   },
   "browserslist": {
     "production": [
@@ -54,5 +53,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "eslint": "^8.42.0",
+    "eslint-config-standard-with-typescript": "^35.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "typescript": "^5.1.3"
   }
 }

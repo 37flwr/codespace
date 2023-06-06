@@ -1,10 +1,10 @@
 import { all, fork } from 'redux-saga/effects';
 
-import themeSaga from './theme/saga'
+import themeSaga from './theme/saga';
 
 export default function* rootSaga() {
-    yield all([
-        // theme
-        fork(themeSaga),
-    ])
+  yield all([
+    // theme
+    fork(themeSaga),
+  ]);
 }
