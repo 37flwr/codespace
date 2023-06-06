@@ -1,15 +1,21 @@
-import EditorPage from '../pages/EditorPage'
-import HomePage from '../pages/HomePage'
+import { useRoutes } from "react-router";
 
-export const publicRoutes = [
-    {
-        path: `/`,
-        exact: true,
-        component: HomePage,
-    },
-    {
-        path: `/editor`,
-        exact: true,
-        component: EditorPage,
-    },
-]
+import EditorPage from "../pages/EditorPage";
+import HomePage from "../pages/HomePage";
+
+const publicRoutes = [
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/editor",
+    element: <EditorPage />,
+  },
+];
+
+const AppRoutes = () => {
+  return useRoutes(publicRoutes);
+};
+
+export default AppRoutes;
