@@ -18,18 +18,16 @@ const headerButtons = [
     text: 'Explore',
     Icon: IconExplore,
     onClick: '/',
-    style: 'unfilled'
   },
   {
     text: 'Discord',
     Icon: IconDiscord,
     onClick: '/',
-    style: 'unfilled'
   },
   {
     text: '</> Code',
     onClick: '/editor',
-    style: 'filled'
+    customClassName: 'filled'
   }
 ]
 

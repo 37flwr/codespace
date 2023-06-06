@@ -1,0 +1,198 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#home-page {
+  width: 90vw;
+  margin: auto;
+  padding: 75px 0;
+
+  .hero-part {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    .hero-heading {
+      margin: 0;
+
+      font-family: "Rubik", sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      color: var(--text-primary);
+      text-align: center;
+    }
+
+    .hero-text {
+      width: 35%;
+      margin: 0 0 10px 0;
+
+      font-family: "Rubik", sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      color: var(--text-primary);
+      text-align: center;
+    }
+  }
+
+  .snippet-part {
+    position: relative;
+
+    .snippet-background {
+      width: 1072px;
+      height: 594px;
+
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: linear-gradient(
+        112.31deg,
+        #ff0000 0%,
+        #f0950c 25.75%,
+        #f2ce11 49.45%,
+        #16ef2c 74.69%,
+        #b508e0 98.9%
+      );
+      filter: blur(50px);
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    .snippet-blur {
+      position: absolute;
+      bottom: -75px;
+      width: 1440px;
+      height: 540px;
+
+      background: linear-gradient(
+        180deg,
+        rgba(14, 15, 17, 0) 0%,
+        #0e0f11 67.19%
+      );
+    }
+
+    .snippet {
+      width: 1022px;
+      height: 594px;
+      padding: 25px 50px 0 50px;
+      margin-top: 100px;
+
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: #1c1d1f;
+      border-radius: 20px 20px 0px 0px;
+
+      font-family: "Rubik", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--background-additional);
+
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 3px; /* control the border thickness */
+
+        border-radius: 20px 20px 0px 0px;
+        background: linear-gradient(
+          112.02deg,
+          #ff0000 0%,
+          #e6740b 23.96%,
+          #f0d90a 48.96%,
+          #10ee19 73.96%,
+          #b019e6 98.96%
+        );
+        -webkit-mask: linear-gradient(
+              112.02deg,
+              #ff0000 0%,
+              #e6740b 23.96%,
+              #f0d90a 48.96%,
+              #10ee19 73.96%,
+              #b019e6 98.96%
+            )
+            content-box,
+          linear-gradient(
+            112.02deg,
+            #ff0000 0%,
+            #e6740b 23.96%,
+            #f0d90a 48.96%,
+            #10ee19 73.96%,
+            #b019e6 98.96%
+          );
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      .snippet-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .snippet-leftside {
+          grid-column-start: 1;
+          margin-top: 10px;
+        }
+
+        .snippet-logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+
+          .snippet-logo-text {
+            font-weight: 600;
+            font-size: 20px;
+          }
+        }
+
+        .snippet-rightside {
+          grid-column-start: 3;
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 10px;
+        }
+      }
+
+      .typing-container {
+        display: flex;
+        align-items: center;
+
+        margin-top: 20px;
+
+        .Typewriter {
+          white-space: pre;
+        }
+
+        .input-cursor {
+          display: inline-block;
+          width: 2px;
+          height: 20px;
+          background-color: var(--background-additional);
+          margin-left: 8px;
+          animation: blink 0.6s linear infinite alternate;
+        }
+      }
+    }
+  }
+}

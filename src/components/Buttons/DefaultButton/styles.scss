@@ -13,6 +13,7 @@
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  color: var(--text-primary);
 
   svg {
     margin-right: 8px;
@@ -23,8 +24,4 @@
   width: 120px;
   background-color: var(--text-primary);
   color: var(--background-primary);
-}
-
-.unfilled {
-  color: var(--text-primary);
 }
