@@ -13,6 +13,11 @@ body {
   background-color: var(--background-primary);
 }
 
+a {
+  all: unset;
+  cursor: pointer;
+}
+
 :root {
   --background-primary: #d7e3fc;
   --background-additional: #7b7d81;
