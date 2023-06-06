@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { ThemeFormContainer } from "../../widgets/forms";
+import { ThemeFormContainer } from "../forms";
 import {
   DropdownSquareButton,
   SquareButton,
@@ -20,22 +20,27 @@ const headerButtons = [
   {
     text: "Explore",
     Icon: IconExplore,
-    onClick: "/",
+    path: "/",
   },
   {
     text: "Discord",
     Icon: IconDiscord,
-    onClick: "/",
+    path: "/",
   },
   {
     text: "</> Code",
-    onClick: "/editor",
+    path: "/editor",
     customClassName: "filled",
   },
 ];
 
-const Header = ({ themeHandler, currentTheme }) => {
-  const { theme } = useSelector((state) => state.Theme);
+interface IHeader {
+  themeHandler: () => void;
+  currentTheme: string;
+}
+
+const Header = ({ themeHandler, currentTheme }: IHeader) => {
+  const { theme } = useSelector((state: any) => state.Theme);
   const memoizedTheme = useMemo(() => theme, [theme]);
 
   return (
@@ -66,13 +71,15 @@ const Header = ({ themeHandler, currentTheme }) => {
           </>
         ) : (
           <>
-            {headerButtons.map(({ Icon, ...buttonProps }, idx) => (
-              <DefaultButton
-                key={idx}
-                icon={Icon && <Icon />}
-                {...buttonProps}
-              />
-            ))}
+            {headerButtons.map(({ Icon, ...buttonProps }, idx) => {
+              return (
+                <DefaultButton
+                  key={idx}
+                  icon={Icon && <Icon />}
+                  {...buttonProps}
+                />
+              );
+            })}
           </>
         )}
       </div>
