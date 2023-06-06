@@ -1,3 +1,3 @@
-import ThemeFormContainer from "./ThemeForm/ThemeFormContainer";
+import ThemeFormContainer from './ThemeForm/ThemeFormContainer';
 
 export { ThemeFormContainer };

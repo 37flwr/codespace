@@ -1,7 +1,7 @@
-import { Field } from "formik";
-import classNames from "classnames";
-import "./styles.scss";
-import { FC, SVGProps } from "react";
+import { type FC } from 'react';
+import { Field } from 'formik';
+import classNames from 'classnames';
+import './styles.scss';
 
 interface IRadioFormField {
   component?: FC;
@@ -14,32 +14,25 @@ interface IRadioFormField {
   customFieldClassName?: string;
 }
 
-const RadioFormField = (props: IRadioFormField) => {
-  const {
-    component,
-    name,
-    id,
-    label,
-    customContainerClassName,
-    customFieldClassName,
-  } = props;
-
+const RadioFormField: FC<IRadioFormField> = ({
+  component,
+  name,
+  id,
+  label,
+  customContainerClassName,
+  customFieldClassName,
+}) => {
   return (
-    <div
-      className={classNames("radio-input-container", customContainerClassName)}
-    >
+    <div className={classNames('radio-input-container', customContainerClassName)}>
       <Field
         name={name}
         id={id}
-        {...(component && { component })}
         value={id}
         type="radio"
         className="radio-field"
+        component={component}
       />
-      <label
-        className={classNames("radio-label", customFieldClassName)}
-        htmlFor={id}
-      >
+      <label className={classNames('radio-label', customFieldClassName)} htmlFor={id}>
         {label}
       </label>
     </div>

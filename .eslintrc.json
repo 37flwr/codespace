@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["standard-with-typescript", "plugin:react/recommended", "airbnb-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "ignorePatterns": ["*.scss"],
+  "rules": {
+    "@typescript-eslint/member-delimiter-style": "off",
+    "react/react-in-jsx-scope": "off",
+    "multiline-ternary": "off",
+    "generator-star-spacing": "off",
+    "@typescript-eslint/default-param-last": "off"
+  }
+}

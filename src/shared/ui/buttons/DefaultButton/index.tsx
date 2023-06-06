@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import { Link } from "react-router-dom";
-import classNames from "classnames";
+import { type FC } from 'react';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
-import "./styles.scss";
+import './styles.scss';
 
 interface IDefaultButton {
   text: string;
@@ -13,20 +13,22 @@ interface IDefaultButton {
   customClassName?: string;
 }
 
-const DefaultButton = ({
+const DefaultButton: FC<IDefaultButton> = ({
   text,
   icon,
   type,
   onClick = () => {},
-  path = "/",
+  path = '/',
   customClassName,
 }: IDefaultButton) => {
   switch (type) {
-    case "button":
+    case 'button':
       return (
         <button
-          onClick={() => onClick()}
-          className={classNames("default-button", customClassName)}
+          onClick={() => {
+            onClick();
+          }}
+          className={classNames('default-button', customClassName)}
         >
           <>
             {icon}
@@ -36,10 +38,7 @@ const DefaultButton = ({
       );
     default:
       return (
-        <Link
-          to={path}
-          className={classNames("default-button", customClassName)}
-        >
+        <Link to={path} className={classNames('default-button', customClassName)}>
           <>
             {icon}
             {text}

@@ -1,36 +1,32 @@
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
-import { ThemeFormContainer } from "../forms";
-import {
-  DropdownSquareButton,
-  SquareButton,
-  DefaultButton,
-} from "../../shared/ui/buttons";
+import { type FC, useMemo } from 'react';
+import { useSelector } from 'react-redux';
+import { ThemeFormContainer } from '../forms';
+import { DropdownSquareButton, SquareButton, DefaultButton } from '../../shared/ui/buttons';
 
-import { ReactComponent as CodespaceLogo } from "../../shared/assets/svg/CodespaceLogo.svg";
-import { ReactComponent as IconSettings } from "../../shared/assets/svg/Settings.svg";
-import { ReactComponent as IconLightTheme } from "../../shared/assets/svg/LightTheme.svg";
-import { ReactComponent as IconDarkTheme } from "../../shared/assets/svg/DarkTheme.svg";
-import { ReactComponent as IconExplore } from "../../shared/assets/svg/Explore.svg";
-import { ReactComponent as IconDiscord } from "../../shared/assets/svg/Discord.svg";
+import { ReactComponent as CodespaceLogo } from '../../shared/assets/svg/CodespaceLogo.svg';
+import { ReactComponent as IconSettings } from '../../shared/assets/svg/Settings.svg';
+import { ReactComponent as IconLightTheme } from '../../shared/assets/svg/LightTheme.svg';
+import { ReactComponent as IconDarkTheme } from '../../shared/assets/svg/DarkTheme.svg';
+import { ReactComponent as IconExplore } from '../../shared/assets/svg/Explore.svg';
+import { ReactComponent as IconDiscord } from '../../shared/assets/svg/Discord.svg';
 
-import "./styles.scss";
+import './styles.scss';
 
 const headerButtons = [
   {
-    text: "Explore",
+    text: 'Explore',
     Icon: IconExplore,
-    path: "/",
+    path: '/',
   },
   {
-    text: "Discord",
+    text: 'Discord',
     Icon: IconDiscord,
-    path: "/",
+    path: '/',
   },
   {
-    text: "</> Code",
-    path: "/editor",
-    customClassName: "filled",
+    text: '</> Code',
+    path: '/editor',
+    customClassName: 'filled',
   },
 ];
 
@@ -39,7 +35,7 @@ interface IHeader {
   currentTheme: string;
 }
 
-const Header = ({ themeHandler, currentTheme }: IHeader) => {
+const Header: FC<IHeader> = ({ themeHandler, currentTheme }) => {
   const { theme } = useSelector((state: any) => state.Theme);
   const memoizedTheme = useMemo(() => theme, [theme]);
 
@@ -50,16 +46,13 @@ const Header = ({ themeHandler, currentTheme }: IHeader) => {
         <span className="header-logo-text">Codespace</span>
       </div>
       <div id="header-buttons">
-        {window.location.pathname === "/editor" ? (
+        {window.location.pathname === '/editor' ? (
           <>
-            <DropdownSquareButton
-              content={memoizedTheme}
-              customId="theme-button"
-            >
+            <DropdownSquareButton content={memoizedTheme} customId="theme-button">
               <ThemeFormContainer currentTheme={memoizedTheme} />
             </DropdownSquareButton>
             <SquareButton onClick={themeHandler}>
-              {currentTheme === "light" ? (
+              {currentTheme === 'light' ? (
                 <IconLightTheme width="85%" height="85%" />
               ) : (
                 <IconDarkTheme width="75%" height="75%" />
@@ -72,13 +65,11 @@ const Header = ({ themeHandler, currentTheme }: IHeader) => {
         ) : (
           <>
             {headerButtons.map(({ Icon, ...buttonProps }, idx) => {
-              return (
-                <DefaultButton
-                  key={idx}
-                  icon={Icon && <Icon />}
-                  {...buttonProps}
-                />
-              );
+              if (Icon !== null && Icon !== undefined) {
+                return <DefaultButton key={idx} icon={<Icon />} {...buttonProps} />;
+              } else {
+                return <DefaultButton key={idx} {...buttonProps} />;
+              }
             })}
           </>
         )}

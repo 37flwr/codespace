@@ -1,10 +1,25 @@
-import { useEffect, useState } from "react";
+import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';
 
-const useCodeState = () => {
-  const [html, setHtml] = useState<string>("");
-  const [css, setCss] = useState<string>("");
-  const [js, setJs] = useState<string>("");
-  const [srcDoc, setSrcDoc] = useState<string>("");
+interface IUseCodeState {
+  states: {
+    html: string;
+    css: string;
+    js: string;
+  };
+  setters: {
+    html: Dispatch<SetStateAction<string>>;
+    css: Dispatch<SetStateAction<string>>;
+    js: Dispatch<SetStateAction<string>>;
+  };
+  doc: string;
+  setDoc: Dispatch<SetStateAction<string>>;
+}
+
+const useCodeState = (): IUseCodeState => {
+  const [html, setHtml] = useState<string>('');
+  const [css, setCss] = useState<string>('');
+  const [js, setJs] = useState<string>('');
+  const [srcDoc, setSrcDoc] = useState<string>('');
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -16,7 +31,9 @@ const useCodeState = () => {
         </html>`);
     }, 250);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [html, css, js]);
 
   return {

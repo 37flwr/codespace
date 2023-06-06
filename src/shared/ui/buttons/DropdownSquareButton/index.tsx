@@ -1,9 +1,9 @@
-import { PropsWithChildren, useState } from "react";
-import classNames from "classnames";
-import { ReactComponent as IconEditorsTop } from "../../../assets/svg/EditorsTop.svg";
-import { ReactComponent as IconEditorsLeft } from "../../../assets/svg/EditorsLeft.svg";
-import { ReactComponent as IconEditorsRight } from "../../../assets/svg/EditorsRight.svg";
-import "./styles.scss";
+import { type PropsWithChildren, useState, type FC } from 'react';
+import classNames from 'classnames';
+import { ReactComponent as IconEditorsTop } from '../../../assets/svg/EditorsTop.svg';
+import { ReactComponent as IconEditorsLeft } from '../../../assets/svg/EditorsLeft.svg';
+import { ReactComponent as IconEditorsRight } from '../../../assets/svg/EditorsRight.svg';
+import './styles.scss';
 
 interface IDropdownSquareButton extends PropsWithChildren {
   content: string;
@@ -11,14 +11,14 @@ interface IDropdownSquareButton extends PropsWithChildren {
   customId: string;
 }
 
-const DropdownSquareButton = ({
+const DropdownSquareButton: FC<IDropdownSquareButton> = ({
   content,
   customClassName,
   customId,
   children,
-}: IDropdownSquareButton) => {
+}) => {
   const [active, toggleActive] = useState(false);
-  const handleClick = () => {
+  const handleClick = (): void => {
     toggleActive(!active);
   };
 
@@ -30,29 +30,31 @@ const DropdownSquareButton = ({
     }
   };
 
-  const themeIcon = (theme: string) => {
-    if (theme === "editors-top") {
-      return <IconEditorsTop />;
-    } else if (theme === "editors-left") {
-      return <IconEditorsLeft />;
-    } else if (theme === "editors-right") {
-      return <IconEditorsRight />;
+  const themeIcon = (theme: string): JSX.Element => {
+    switch (theme) {
+      case 'editors-top':
+        return <IconEditorsTop />;
+      case 'editors-left':
+        return <IconEditorsLeft />;
+      case 'editors-right':
+        return <IconEditorsRight />;
+      default:
+        return <IconEditorsTop />;
     }
-    return "Theme";
   };
 
   return (
     <div className="square-button-wrapper">
       <button
-        className={classNames("square-button", customClassName)}
-        onClick={() => handleClick()}
+        className={classNames('square-button', customClassName)}
+        onClick={() => {
+          handleClick();
+        }}
         id={customId}
       >
         {themeIcon(content)}
       </button>
-      <div className={classNames("button-details", active && "active")}>
-        {children}
-      </div>
+      <div className={classNames('button-details', active && 'active')}>{children}</div>
     </div>
   );
 };
