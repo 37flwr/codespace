@@ -18,7 +18,13 @@
 }
 
 .code-editor-radio-field {
-  width: 120px;
+  width: 150px;
   border-radius: 5px;
   background-color: var(--background-bonus);
+}
+
+.code-editor-form-field {
+  all: unset;
+  width: 100% !important;
+  font-size: 15px;
 }

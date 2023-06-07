@@ -23,7 +23,7 @@ const RadioFormField: FC<IRadioFormField> = ({
   customFieldClassName,
 }) => {
   return (
-    <div className={classNames('radio-input-container', customContainerClassName)}>
+    <div className={classNames(customContainerClassName, 'radio-input-container')}>
       <Field
         name={name}
         id={id}
@@ -32,7 +32,7 @@ const RadioFormField: FC<IRadioFormField> = ({
         className="radio-field"
         component={component}
       />
-      <label className={classNames('radio-label', customFieldClassName)} htmlFor={id}>
+      <label className={classNames(customFieldClassName, 'radio-label')} htmlFor={id}>
         {label}
       </label>
     </div>
