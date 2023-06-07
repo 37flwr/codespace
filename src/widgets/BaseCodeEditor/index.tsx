@@ -1,5 +1,6 @@
 import { type FC, useEffect, useState } from 'react';
-import CodeEditor from '../../entities/CodeEditor';
+import CodeEditor from '../../entities/code-editor/CodeEditor';
+import CodeEditorNavBar from '../../entities/code-editor/CodeEditorNavBar';
 import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
 
 const BaseCodeEditor: FC = () => {
@@ -7,10 +8,16 @@ const BaseCodeEditor: FC = () => {
   const [language, setLanguage] = useState<string>('javascript');
   const [code, setCode] = useState<string>('');
 
-  const reactToChange = (): void => {
-    console.log('react');
-    setLanguage('javascript');
-    setCode('asd');
+  const onCodeChange = (value: string): void => {
+    setCode(value);
+  };
+
+  const handleLanguageChange = (value: string): void => {
+    setLanguage(value);
+  };
+
+  const handleThemeChange = (value: string): void => {
+    setTheme(value);
   };
 
   useEffect(() => {
@@ -27,7 +34,15 @@ const BaseCodeEditor: FC = () => {
     fetchCodeEditorTheme();
   }, []);
 
-  return <CodeEditor theme={theme} language={language} code={code} onChange={reactToChange} />;
+  return (
+    <>
+      <CodeEditorNavBar
+        handleLanguageChange={handleLanguageChange}
+        handleThemeChange={handleThemeChange}
+      />
+      <CodeEditor theme={theme} language={language} code={code} onChange={onCodeChange} />;
+    </>
+  );
 };
 
 export default BaseCodeEditor;

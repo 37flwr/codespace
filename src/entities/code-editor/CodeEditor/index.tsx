@@ -16,7 +16,7 @@ const CodeEditor: FC<ICodeEditor> = ({ onChange, language = 'javascript', code, 
   const handleEditorChange = (incomingValue: string | undefined): void => {
     if (incomingValue !== undefined) {
       setValue(incomingValue);
-      onChange('code', incomingValue);
+      onChange(incomingValue);
     }
   };
 
