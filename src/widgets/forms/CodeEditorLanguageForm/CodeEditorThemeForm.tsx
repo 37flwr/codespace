@@ -10,7 +10,7 @@ interface IFormField {
   id: string;
   name: string;
   type: string;
-  label: JSX.Element;
+  label: string;
   show?: boolean;
 }
 
@@ -21,7 +21,7 @@ const generateFormField = (): IFormField[] => {
       id: `${langOption.value}${langOption.id}`,
       name: 'lang',
       type: 'radio',
-      label: <p className="code-editor-form-field">{langOption.label}</p>,
+      label: langOption.label,
     });
   }
 
@@ -32,8 +32,8 @@ const renderRadioFormField: FC<IFormField> = (fieldProps) => (
   <RadioFormField
     {...fieldProps}
     key={fieldProps.id}
-    customContainerClassName="code-editor-radio-field"
-    customFieldClassName="code-editor-form-field"
+    customContainerClassName="code-editor-radio-input-container"
+    customFieldClassName="code-editor-radio-label"
   />
 );
 
@@ -43,8 +43,10 @@ const CodeEditorThemeForm: FC<{ values: any }> = ({ values }) => {
   }, [values]);
 
   return (
-    <Form className="code-editor-lang-form" id="code-editor-lang-form">
-      {generateFormField().map(renderRadioFormField)}
+    <Form className="code-editor__lang-form" id="ce-lang-form">
+      <div className="code-editor__lang-form_container">
+        {generateFormField().map(renderRadioFormField)}
+      </div>
       <button type="submit" id="code-editor-lang-form-button" />
     </Form>
   );

@@ -8,7 +8,7 @@ interface IRadioFormField {
   name: string;
   id: string;
   key?: any;
-  label: JSX.Element;
+  label: JSX.Element | string;
   type?: string;
   customContainerClassName?: string;
   customFieldClassName?: string;
