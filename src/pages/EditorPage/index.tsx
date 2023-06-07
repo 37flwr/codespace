@@ -1,23 +1,29 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
-import Editor from '../../entities/Editor';
 import useCodeState from '../../features/useCodeState';
 import './styles.scss';
+import CodeEditor from '../../entities/CodeEditor';
 
 const EditorPage: FC = () => {
   const codeState = useCodeState();
+
+  const language = 'javascript';
+
+  const code = '// some comment';
+
+  const [testState, setTestState] = useState(0);
+
+  const reactToChange = (): void => {
+    setTestState(testState + 1);
+  };
 
   const { theme } = useSelector((state: any) => state.Theme);
   const memoizedTheme = useMemo(() => theme, [theme]);
 
   return (
     <section className={classNames('editor-page', memoizedTheme)}>
-      <div className="editors-group">
-        <Editor setState={codeState.setters.html} lang="html" />
-        <Editor setState={codeState.setters.css} lang="css" />
-        <Editor setState={codeState.setters.js} lang="js" />
-      </div>
+      <CodeEditor theme={theme} language={language} code={code} onChange={reactToChange} />
       <iframe
         srcDoc={codeState.doc}
         title="Output"
