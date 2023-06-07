@@ -51,16 +51,20 @@ const monacoThemes = {
   monoindustrial: 'monoindustrial',
 };
 
-const defineTheme = (theme: string = 'idle') => {
-  return new Promise<void>((res) => {
-    Promise.all([
-      loader.init(),
-      import(`monaco-themes/themes/${monacoThemes[theme as keyof typeof monacoThemes]}.json`),
-    ]).then(([monaco, themeData]) => {
-      monaco.editor.defineTheme(theme, themeData);
-      res();
+const defineCodeEditorTheme = async (theme: string = 'twilight'): Promise<string> => {
+  const generatedTheme = Promise.all([
+    loader.init(),
+    import(`monaco-themes/themes/${monacoThemes[theme as keyof typeof monacoThemes]}.json`),
+  ])
+    .then(([monaco, themeData]) => {
+      return monaco.editor.defineTheme(theme, themeData);
+    })
+    .catch(() => {
+      throw new Error(
+        'An error happened while generating theme for code editor. Try again please!',
+      );
     });
-  });
+  return generatedTheme;
 };
 
-export { defineTheme };
+export { defineCodeEditorTheme };
