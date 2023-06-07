@@ -7,6 +7,7 @@ import CodeEditorThemeForm from './CodeEditorThemeForm';
 interface IThemeFormContainer {
   currentLang: string;
   initialValues?: any;
+  handleSubmit: (arg0: string) => void;
 }
 
 const CodeEditorThemeFormContainer: FC<IThemeFormContainer> = ({
@@ -14,12 +15,13 @@ const CodeEditorThemeFormContainer: FC<IThemeFormContainer> = ({
   initialValues = {
     lang: currentLang,
   },
+  handleSubmit,
 }) => {
   // const dispatch = useDispatch();
 
-  const handleSubmit = (value: string): void => {
+  const handleFormSubmit = (value: string): void => {
     // dispatch(changeTheme(value));
-    console.log(value);
+    handleSubmit(value);
   };
 
   return (
@@ -27,7 +29,7 @@ const CodeEditorThemeFormContainer: FC<IThemeFormContainer> = ({
       enableReinitialize
       initialValues={initialValues}
       onSubmit={({ lang }) => {
-        handleSubmit(lang);
+        handleFormSubmit(lang);
       }}
     >
       {({ values }) => <CodeEditorThemeForm values={values} />}

@@ -1,11 +1,13 @@
 import { type FC, useEffect, useState } from 'react';
 import CodeEditor from '../../entities/code-editor/CodeEditor';
 import CodeEditorNavBar from '../../entities/code-editor/CodeEditorNavBar';
+import editorLanguageOptions from '../../shared/constants/editorLanguageOptions';
 import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
 
 const BaseCodeEditor: FC = () => {
   const [theme, setTheme] = useState<string>('twilight');
-  const [language, setLanguage] = useState<string>('javascript');
+  const [language, setLanguage] = useState<string>('javascript63');
+  const [languageTitle, setLanguageTitle] = useState<string>('Javascript');
   const [code, setCode] = useState<string>('');
 
   const onCodeChange = (value: string): void => {
@@ -34,10 +36,26 @@ const BaseCodeEditor: FC = () => {
     fetchCodeEditorTheme();
   }, []);
 
+  useEffect(() => {
+    const generateChosenLanguage = (lang: string): string => {
+      const name = editorLanguageOptions.find(
+        ({ value, id }) =>
+          value === lang?.replace(/[^A-Za-z]/g, '') && id === Number(lang?.replace(/[^0-9]/g, '')),
+      )?.name;
+
+      if (name === undefined) {
+        return language;
+      }
+      return name;
+    };
+
+    setLanguageTitle(generateChosenLanguage(language));
+  }, [language]);
+
   return (
     <>
       <CodeEditorNavBar
-        lang={language}
+        lang={languageTitle}
         handleLanguageChange={handleLanguageChange}
         handleThemeChange={handleThemeChange}
       />

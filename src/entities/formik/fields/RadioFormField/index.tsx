@@ -12,6 +12,7 @@ interface IRadioFormField {
   type?: string;
   customContainerClassName?: string;
   customFieldClassName?: string;
+  onClick?: () => void;
 }
 
 const RadioFormField: FC<IRadioFormField> = ({
@@ -21,9 +22,13 @@ const RadioFormField: FC<IRadioFormField> = ({
   label,
   customContainerClassName,
   customFieldClassName,
+  onClick,
 }) => {
   return (
-    <div className={classNames(customContainerClassName, 'radio-input-container')}>
+    <div
+      className={classNames(customContainerClassName, 'radio-input-container')}
+      onClick={onClick}
+    >
       <Field
         name={name}
         id={id}
