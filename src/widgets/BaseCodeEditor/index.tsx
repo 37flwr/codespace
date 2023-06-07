@@ -37,6 +37,7 @@ const BaseCodeEditor: FC = () => {
   return (
     <>
       <CodeEditorNavBar
+        lang={language}
         handleLanguageChange={handleLanguageChange}
         handleThemeChange={handleThemeChange}
       />

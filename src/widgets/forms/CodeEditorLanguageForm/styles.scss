@@ -1,0 +1,24 @@
+.code-editor-lang-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 5px;
+  background-color: var(--background-additional);
+  border-radius: 5px;
+
+  #code-editor-lang-form-button {
+    display: none;
+  }
+}
+
+.code-editor-radio-field {
+  width: 120px;
+  border-radius: 5px;
+  background-color: var(--background-bonus);
+}

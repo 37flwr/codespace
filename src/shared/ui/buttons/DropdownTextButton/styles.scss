@@ -14,16 +14,16 @@
     z-index: 2;
 
     & > * {
-      height: 35px;
-      width: 35px;
       border-radius: 5px;
       display: flex;
+      gap: 2px;
       justify-content: center;
       align-items: center;
     }
   }
-  .active {
-    display: flex;
-    gap: 2px;
-  }
+}
+
+.active {
+  display: flex;
+  gap: 2px;
 }
