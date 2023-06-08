@@ -1,10 +1,10 @@
 import { type FC } from 'react';
 import { Form } from 'formik';
-import { RadioFormField } from '../../../entities/formik/fields';
+import { RadioFormField } from '../../../../entities/formik/fields';
 
-import editorLanguageOptions from '../../../shared/constants/editorLanguageOptions';
+import editorLanguageOptions from '../../../../shared/constants/editorLanguageOptions';
 
-import './styles.scss';
+import '../styles.scss';
 
 interface IFormField {
   id: string;
@@ -42,13 +42,13 @@ const renderRadioFormField: FC<IFormField> = (fieldProps) => (
   />
 );
 
-const CodeEditorThemeForm: FC<{ values: any }> = () => (
-  <Form className="code-editor__lang-form" id="ce-lang-form">
-    <div className="code-editor__lang-form_container">
+const CodeEditorLanguageForm: FC<{ values: any }> = () => (
+  <Form className="code-editor__form" id="ce-lang-form">
+    <div className="code-editor__form_container">
       {generateFormField().map(renderRadioFormField)}
     </div>
     <button type="submit" id="code-editor-lang-form-button" />
   </Form>
 );
 
-export default CodeEditorThemeForm;
+export default CodeEditorLanguageForm;

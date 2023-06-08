@@ -2,7 +2,7 @@ import { Formik } from 'formik';
 import { type FC } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { changeTheme } from '../../../store/actions';
-import CodeEditorThemeForm from './CodeEditorThemeForm';
+import CodeEditorLanguageForm from './CodeEditorLanguageForm';
 
 interface IThemeFormContainer {
   currentLang: string;
@@ -10,7 +10,7 @@ interface IThemeFormContainer {
   handleSubmit: (arg0: string) => void;
 }
 
-const CodeEditorThemeFormContainer: FC<IThemeFormContainer> = ({
+const CodeEditorLanguageFormContainer: FC<IThemeFormContainer> = ({
   currentLang,
   initialValues = {
     lang: currentLang,
@@ -32,9 +32,9 @@ const CodeEditorThemeFormContainer: FC<IThemeFormContainer> = ({
         handleFormSubmit(lang);
       }}
     >
-      {({ values }) => <CodeEditorThemeForm values={values} />}
+      {({ values }) => <CodeEditorLanguageForm values={values} />}
     </Formik>
   );
 };
 
-export default CodeEditorThemeFormContainer;
+export default CodeEditorLanguageFormContainer;

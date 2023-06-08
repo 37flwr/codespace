@@ -1,4 +1,4 @@
-.code-editor__lang-form {
+.code-editor__form {
   position: relative;
   top: 100%;
   left: 50%;
@@ -19,7 +19,8 @@
     overflow: scroll;
   }
 
-  #code-editor-lang-form-button {
+  #code-editor-lang-form-button,
+  #code-editor-th-form-button {
     display: none;
   }
 }
@@ -35,6 +36,7 @@
   white-space: nowrap;
 
   width: 100% !important;
+  height: 100%;
   font-size: 15px;
   overflow: hidden;
   justify-content: normal !important;
