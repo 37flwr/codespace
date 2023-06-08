@@ -1,25 +1,29 @@
 import { type FC, useEffect, useState } from 'react';
 import CodeEditor from '../../entities/code-editor/CodeEditor';
 import CodeEditorNavBar from '../../entities/code-editor/CodeEditorNavBar';
-import editorLanguageOptions from '../../shared/constants/editorLanguageOptions';
 import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
+import {
+  extractNumericChars,
+  extractAlphabeticChars,
+} from '../../shared/lib/stringCharactersExtractors';
+import editorLanguageOptions from '../../shared/constants/editorLanguageOptions';
 import editorThemeOptions from '../../shared/constants/editorThemeOptions';
 
 const BaseCodeEditor: FC = () => {
   const [theme, setTheme] = useState<string>('twilight');
   const [language, setLanguage] = useState<string>('javascript63');
-  const [languageTitle, setLanguageTitle] = useState<string>('Javascript');
-  const [themeTitle, setThemeTitle] = useState<string>('Twilight');
   const [code, setCode] = useState<string>('');
 
+  const [languageTitle, setLanguageTitle] = useState<string>('Javascript');
+  const [themeTitle, setThemeTitle] = useState<string>('Twilight');
+
   async function fetchCodeEditorTheme(newTheme: string = 'twilight'): Promise<any> {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     defineCodeEditorTheme(newTheme)
       .then(() => {
         setTheme(newTheme);
       })
-      .catch(() => {
-        console.log('error');
-      });
+      .catch(() => {});
   }
 
   const onCodeChange = (value: string): void => {
@@ -43,7 +47,7 @@ const BaseCodeEditor: FC = () => {
     const generateChosenLanguage = (lang: string): string => {
       const name = editorLanguageOptions.find(
         ({ value, id }) =>
-          value === lang?.replace(/[^A-Za-z]/g, '') && id === Number(lang?.replace(/[^0-9]/g, '')),
+          value === extractAlphabeticChars(lang) && id === extractNumericChars(lang),
       )?.name;
 
       if (name === undefined) {
@@ -73,7 +77,13 @@ const BaseCodeEditor: FC = () => {
         handleLanguageChange={handleLanguageChange}
         handleThemeChange={handleThemeChange}
       />
-      <CodeEditor theme={theme} language={language} code={code} onChange={onCodeChange} />;
+      <CodeEditor
+        theme={theme}
+        language={extractAlphabeticChars(language)}
+        code={code}
+        onChange={onCodeChange}
+      />
+      ;
     </>
   );
 };
