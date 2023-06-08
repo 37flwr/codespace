@@ -17,7 +17,7 @@ const HomePage: FC = () => {
         <h4 className="hero-text">
           Codespace enables users to build beatiful web applications right in the browser
         </h4>
-        <DefaultButton text="</> Code" path="/editor" customClassName="filled" />
+        <DefaultButton text="</> Code" path="/editor" variant="filled" />
       </div>
       <div className="snippet-part">
         <div className="snippet-background" />
