@@ -6,24 +6,17 @@ import CodeEditorThemeFormContainer from '../../../widgets/forms/CodeEditor/Code
 interface ICodeEditorNavBar {
   lang: string;
   theme: string;
-  handleThemeChange: (arg0: string) => void;
-  handleLanguageChange: (arg0: string) => void;
 }
 
-const CodeEditorNavBar: FC<ICodeEditorNavBar> = ({
-  lang,
-  theme,
-  handleLanguageChange,
-  handleThemeChange,
-}) => {
+const CodeEditorNavBar: FC<ICodeEditorNavBar> = ({ lang, theme }) => {
   return (
     <div className="code-editor__navbar">
       <div className="code-editor__navbar_container">
         <DropdownTextButton content={lang} customId="code-editor-lang">
-          <CodeEditorLanguageFormContainer currentLang={lang} handleSubmit={handleLanguageChange} />
+          <CodeEditorLanguageFormContainer currentLang={lang} />
         </DropdownTextButton>
         <DropdownTextButton content={theme} customId="code-editor-theme">
-          <CodeEditorThemeFormContainer currentTheme={theme} handleSubmit={handleThemeChange} />
+          <CodeEditorThemeFormContainer currentTheme={theme} />
         </DropdownTextButton>
       </div>
     </div>

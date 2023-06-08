@@ -5,11 +5,11 @@ import { useAppDispatch } from '../../../../store/hooks';
 // import { changeTheme } from '../../../store/actions';
 import { codeEditorActions } from '../../../../store/actions';
 import CodeEditorThemeForm from './CodeEditorThemeForm';
+import { defineCodeEditorTheme } from '../../../../shared/lib/defineCodeEditorTheme';
 
 interface IThemeFormContainer {
   currentTheme: string;
   initialValues?: any;
-  handleSubmit: (arg0: string) => void;
 }
 
 const CodeEditorThemeFormContainer: FC<IThemeFormContainer> = ({
@@ -17,13 +17,15 @@ const CodeEditorThemeFormContainer: FC<IThemeFormContainer> = ({
   initialValues = {
     theme: currentTheme,
   },
-  handleSubmit,
 }) => {
   const dispatch = useAppDispatch();
 
   const handleFormSubmit = (value: string): void => {
-    dispatch(codeEditorActions.changeTheme(value));
-    handleSubmit(value);
+    defineCodeEditorTheme(value)
+      .then(() => {
+        dispatch(codeEditorActions.changeTheme(value));
+      })
+      .catch(() => {});
   };
 
   return (

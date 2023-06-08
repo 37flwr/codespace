@@ -9,7 +9,6 @@ import CodeEditorLanguageForm from './CodeEditorLanguageForm';
 interface IThemeFormContainer {
   currentLang: string;
   initialValues?: any;
-  handleSubmit: (arg0: string) => void;
 }
 
 const CodeEditorLanguageFormContainer: FC<IThemeFormContainer> = ({
@@ -17,13 +16,11 @@ const CodeEditorLanguageFormContainer: FC<IThemeFormContainer> = ({
   initialValues = {
     lang: currentLang,
   },
-  handleSubmit,
 }) => {
   const dispatch = useAppDispatch();
 
   const handleFormSubmit = (value: string): void => {
     dispatch(codeEditorActions.changeLanguage(value));
-    handleSubmit(value);
   };
 
   return (
