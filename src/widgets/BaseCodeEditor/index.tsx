@@ -56,11 +56,9 @@ const BaseCodeEditor: FC = () => {
         setProcessing(false);
         setOutputDetails(response.data);
         // showSuccessToast('Compiled Successfully!');
-        console.log('response.data', response.data);
         return false;
       }
     } catch (err) {
-      console.log('err', err);
       setProcessing(false);
       // showErrorToast();
     }
@@ -73,7 +71,6 @@ const BaseCodeEditor: FC = () => {
       // encode source code in base64
       source_code: btoa(code),
     };
-    console.log(process.env.REACT_APP_RAPID_API_URL);
     const options = {
       method: 'POST',
       url: process.env.REACT_APP_RAPID_API_URL,
@@ -90,7 +87,6 @@ const BaseCodeEditor: FC = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log('res.data', response.data);
         const token = response.data.token;
         // eslint-disable-next-line
         checkStatus(token);
@@ -99,7 +95,6 @@ const BaseCodeEditor: FC = () => {
         // eslint-disable-next-line
         let error = err.response ? err.response.data : err;
         setProcessing(false);
-        console.log(error);
       });
   };
 
