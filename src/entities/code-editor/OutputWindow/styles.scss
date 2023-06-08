@@ -1,0 +1,9 @@
+.output {
+  &_success {
+    color: var(--color-green);
+  }
+
+  &_fail {
+    color: var(--color-red);
+  }
+}

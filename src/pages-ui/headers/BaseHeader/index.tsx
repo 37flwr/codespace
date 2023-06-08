@@ -24,7 +24,7 @@ const headerButtons = [
   {
     text: '</> Code',
     path: '/editor',
-    customClassName: 'filled',
+    variant: 'filled',
     show: true,
   },
 ];
@@ -39,22 +39,16 @@ const BaseHeader: FC<IHeader> = ({ themeHandler, currentTheme }) => {
     <section id="header">
       <HeaderLogo />
       <div id="header-buttons">
-        {window.location.pathname === '/editor' ? (
-          <></>
-        ) : (
-          <>
-            <ChangeThemeButton onClick={themeHandler} theme={currentTheme} />
-            {headerButtons
-              .filter(({ show }) => show)
-              .map(({ Icon, ...buttonProps }, idx) => {
-                if (Icon !== null && Icon !== undefined) {
-                  return <DefaultButton key={idx} icon={<Icon />} {...buttonProps} />;
-                } else {
-                  return <DefaultButton key={idx} {...buttonProps} />;
-                }
-              })}
-          </>
-        )}
+        <ChangeThemeButton onClick={themeHandler} theme={currentTheme} />
+        {headerButtons
+          .filter(({ show }) => show)
+          .map(({ Icon, ...buttonProps }, idx) => {
+            if (Icon !== null && Icon !== undefined) {
+              return <DefaultButton key={idx} icon={<Icon />} {...buttonProps} />;
+            } else {
+              return <DefaultButton key={idx} {...buttonProps} />;
+            }
+          })}
       </div>
     </section>
   );

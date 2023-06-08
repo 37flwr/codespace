@@ -1,7 +1,7 @@
 import { loader } from '@monaco-editor/react';
 import editorThemeOptions from '../constants/editorThemeOptions';
 
-const defineCodeEditorTheme = async (theme: string = 'twilight'): Promise<string> => {
+const defineCodeEditorTheme = async (theme: string = 'twilight'): Promise<void> => {
   const generatedTheme = Promise.all([
     loader.init(),
     import(
@@ -9,6 +9,7 @@ const defineCodeEditorTheme = async (theme: string = 'twilight'): Promise<string
     ),
   ])
     .then(([monaco, themeData]) => {
+      // eslint-disable-next-line
       return monaco.editor.defineTheme(theme, themeData);
     })
     .catch(() => {
