@@ -1,81 +1,28 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useState } from 'react';
 import CodeEditor from '../../entities/code-editor/CodeEditor';
 import CodeEditorNavBar from '../../entities/code-editor/CodeEditorNavBar';
-import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
+import { extractAlphabeticChars } from '../../shared/lib/stringCharactersExtractors';
+import { useAppSelector } from '../../store/hooks';
 import {
-  extractNumericChars,
-  extractAlphabeticChars,
-} from '../../shared/lib/stringCharactersExtractors';
-import editorLanguageOptions from '../../shared/constants/editorLanguageOptions';
-import editorThemeOptions from '../../shared/constants/editorThemeOptions';
+  parseCodeEditorLanguage,
+  parseCodeEditorTheme,
+} from '../../shared/lib/parseCodeEditorVitals';
 
 const BaseCodeEditor: FC = () => {
-  const [theme, setTheme] = useState<string>('twilight');
-  const [language, setLanguage] = useState<string>('javascript63');
   const [code, setCode] = useState<string>('');
 
-  const [languageTitle, setLanguageTitle] = useState<string>('Javascript');
-  const [themeTitle, setThemeTitle] = useState<string>('Twilight');
-
-  async function fetchCodeEditorTheme(newTheme: string = 'twilight'): Promise<any> {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    defineCodeEditorTheme(newTheme)
-      .then(() => {
-        setTheme(newTheme);
-      })
-      .catch(() => {});
-  }
+  const codeEditorSettings = useAppSelector((state) => state.CodeEditor);
+  const { theme, language } = codeEditorSettings;
 
   const onCodeChange = (value: string): void => {
     setCode(value);
   };
 
-  const handleLanguageChange = (value: string): void => {
-    setLanguage(value);
-  };
-
-  const handleThemeChange = async (value: string): void => {
-    await fetchCodeEditorTheme(value);
-  };
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    fetchCodeEditorTheme(theme);
-  }, [theme]);
-
-  useEffect(() => {
-    const generateChosenLanguage = (lang: string): string => {
-      const name = editorLanguageOptions.find(
-        ({ value, id }) =>
-          value === extractAlphabeticChars(lang) && id === extractNumericChars(lang),
-      )?.name;
-
-      if (name === undefined) {
-        return language;
-      }
-      return name;
-    };
-
-    setLanguageTitle(generateChosenLanguage(language));
-  }, [language]);
-
-  useEffect(() => {
-    const parsedThemeTitle = editorThemeOptions[theme as keyof typeof editorThemeOptions];
-
-    if (parsedThemeTitle !== undefined) {
-      setThemeTitle(parsedThemeTitle);
-    } else {
-      setThemeTitle('Twilight');
-    }
-  }, [theme]);
-
   return (
     <>
       <CodeEditorNavBar
-        lang={languageTitle}
-        theme={themeTitle}
-        handleLanguageChange={handleLanguageChange}
-        handleThemeChange={handleThemeChange}
+        lang={parseCodeEditorLanguage(language)}
+        theme={parseCodeEditorTheme(theme)}
       />
       <CodeEditor
         theme={theme}
