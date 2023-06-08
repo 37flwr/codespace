@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import { type FC } from 'react';
-import { useDispatch } from 'react-redux';
-import { changeTheme } from '../../../store/actions';
+import { themeActions } from '../../../store/actions';
+import { useAppDispatch } from '../../../store/hooks';
 import ThemeForm from './ThemeForm';
 
 interface IThemeFormContainer {
@@ -15,10 +15,10 @@ const ThemeFormContainer: FC<IThemeFormContainer> = ({
     theme: currentTheme,
   },
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleSubmit = (value: string): void => {
-    dispatch(changeTheme(value));
+    dispatch(themeActions.changeTheme(value));
   };
 
   return (

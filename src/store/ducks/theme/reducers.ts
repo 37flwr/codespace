@@ -1,17 +1,17 @@
-import { CHANGE_THEME, CHANGE_THEME_SUCCESS } from './actionTypes';
+import types from './actionTypes';
 
 const initialState = {
   error: false,
   theme: 'editors-top',
 };
 
-const redactors = (state = initialState, action) => {
+const reducers = (state = initialState, action: { type: string; payload: string }): any => {
   switch (action.type) {
-    case CHANGE_THEME:
+    case types.CHANGE_THEME:
       return {
         ...state,
       };
-    case CHANGE_THEME_SUCCESS:
+    case types.CHANGE_THEME_SUCCESS:
       return {
         ...state,
         theme: action.payload,
@@ -21,4 +21,4 @@ const redactors = (state = initialState, action) => {
   }
 };
 
-export default redactors;
+export default reducers;
