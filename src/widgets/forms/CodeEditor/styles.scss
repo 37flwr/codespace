@@ -1,0 +1,44 @@
+.code-editor__form {
+  position: relative;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 5px;
+  background-color: var(--background-additional);
+  border-radius: 5px;
+
+  max-height: 300px;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    height: 100%;
+    overflow: scroll;
+  }
+
+  #code-editor-lang-form-button,
+  #code-editor-th-form-button {
+    display: none;
+  }
+}
+
+.code-editor-radio-input-container {
+  width: 150px;
+  min-height: 35px;
+  background-color: var(--background-bonus);
+}
+
+.code-editor-radio-label {
+  display: inline;
+  white-space: nowrap;
+
+  width: 100% !important;
+  height: 100%;
+  font-size: 15px;
+  overflow: hidden;
+  justify-content: normal !important;
+  padding-left: 5px;
+}

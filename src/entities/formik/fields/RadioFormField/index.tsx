@@ -8,10 +8,11 @@ interface IRadioFormField {
   name: string;
   id: string;
   key?: any;
-  label: JSX.Element;
+  label: JSX.Element | string;
   type?: string;
   customContainerClassName?: string;
   customFieldClassName?: string;
+  onClick?: () => void;
 }
 
 const RadioFormField: FC<IRadioFormField> = ({
@@ -21,9 +22,13 @@ const RadioFormField: FC<IRadioFormField> = ({
   label,
   customContainerClassName,
   customFieldClassName,
+  onClick,
 }) => {
   return (
-    <div className={classNames('radio-input-container', customContainerClassName)}>
+    <div
+      className={classNames(customContainerClassName, 'radio-input-container')}
+      onClick={onClick}
+    >
       <Field
         name={name}
         id={id}
@@ -32,7 +37,7 @@ const RadioFormField: FC<IRadioFormField> = ({
         className="radio-field"
         component={component}
       />
-      <label className={classNames('radio-label', customFieldClassName)} htmlFor={id}>
+      <label className={classNames(customFieldClassName, 'radio-label')} htmlFor={id}>
         {label}
       </label>
     </div>
