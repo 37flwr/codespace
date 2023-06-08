@@ -14,7 +14,7 @@ function* changeLanguageSaga({ payload }: { type: string; payload: string }): an
 
 function* changeThemeSaga({ payload }: { type: string; payload: string }): any {
   try {
-    yield put(actions.changeLanguageSuccess(payload));
+    yield put(actions.changeThemeSuccess(payload));
   } catch {
     yield put(actions.apiError());
   }

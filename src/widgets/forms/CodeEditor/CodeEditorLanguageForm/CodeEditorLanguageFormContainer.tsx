@@ -1,7 +1,9 @@
 import { Formik } from 'formik';
 import { type FC } from 'react';
+import { useAppDispatch } from '../../../../store/hooks';
 // import { useDispatch } from 'react-redux';
 // import { changeTheme } from '../../../store/actions';
+import { codeEditorActions } from '../../../../store/actions';
 import CodeEditorLanguageForm from './CodeEditorLanguageForm';
 
 interface IThemeFormContainer {
@@ -17,10 +19,10 @@ const CodeEditorLanguageFormContainer: FC<IThemeFormContainer> = ({
   },
   handleSubmit,
 }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleFormSubmit = (value: string): void => {
-    // dispatch(changeTheme(value));
+    dispatch(codeEditorActions.changeLanguage(value));
     handleSubmit(value);
   };
 
