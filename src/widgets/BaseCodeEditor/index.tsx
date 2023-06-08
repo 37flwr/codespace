@@ -13,6 +13,7 @@ import {
 } from '../../shared/lib/parseCodeEditorVitals';
 import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
 import OutputWindow from '../../entities/code-editor/OutputWindow';
+import { DefaultButton } from '../../shared/ui/buttons';
 
 const BaseCodeEditor: FC = () => {
   const [code, setCode] = useState<string>('');
@@ -119,7 +120,7 @@ const BaseCodeEditor: FC = () => {
         onChange={onCodeChange}
       />
       {outputDetails !== null && <OutputWindow outputDetails={outputDetails} />}
-      <button onClick={handleCompile}>ompile</button>
+      <DefaultButton type="button" variant="filled" text="Compile" onClick={handleCompile} />
     </>
   );
 };

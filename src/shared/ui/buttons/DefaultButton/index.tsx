@@ -6,6 +6,7 @@ import './styles.scss';
 
 interface IDefaultButton {
   text: string;
+  variant?: string;
   icon?: JSX.Element | undefined;
   type?: string;
   onClick?: () => void;
@@ -17,18 +18,25 @@ const DefaultButton: FC<IDefaultButton> = ({
   text,
   icon,
   type,
+  variant,
   onClick = () => {},
   path = '/',
   customClassName,
 }: IDefaultButton) => {
+  const generateVariantClassName = (): string => {
+    switch (variant) {
+      case 'filled':
+        return 'filled';
+      default:
+        return '';
+    }
+  };
   switch (type) {
     case 'button':
       return (
         <button
-          onClick={() => {
-            onClick();
-          }}
-          className={classNames('default-button', customClassName)}
+          onClick={onClick}
+          className={classNames('default-button', generateVariantClassName(), customClassName)}
         >
           <>
             {icon}

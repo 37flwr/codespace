@@ -24,7 +24,7 @@ const headerButtons = [
   {
     text: '</> Code',
     path: '/editor',
-    customClassName: 'filled',
+    variant: 'filled',
     show: true,
   },
 ];
