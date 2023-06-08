@@ -31,6 +31,8 @@ const DefaultButton: FC<IDefaultButton> = ({
         return '';
     }
   };
+
+  console.log(generateVariantClassName());
   switch (type) {
     case 'button':
       return (
@@ -46,7 +48,10 @@ const DefaultButton: FC<IDefaultButton> = ({
       );
     default:
       return (
-        <Link to={path} className={classNames('default-button', customClassName)}>
+        <Link
+          to={path}
+          className={classNames('default-button', generateVariantClassName(), customClassName)}
+        >
           <>
             {icon}
             {text}
