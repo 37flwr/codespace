@@ -1,12 +1,13 @@
-import { type FC, useState } from 'react';
+import { type FC, useState, useEffect } from 'react';
+import { useAppSelector } from '../../store/hooks';
 import CodeEditor from '../../entities/code-editor/CodeEditor';
 import CodeEditorNavBar from '../../entities/code-editor/CodeEditorNavBar';
 import { extractAlphabeticChars } from '../../shared/lib/stringCharactersExtractors';
-import { useAppSelector } from '../../store/hooks';
 import {
   parseCodeEditorLanguage,
   parseCodeEditorTheme,
 } from '../../shared/lib/parseCodeEditorVitals';
+import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
 
 const BaseCodeEditor: FC = () => {
   const [code, setCode] = useState<string>('');
@@ -17,6 +18,10 @@ const BaseCodeEditor: FC = () => {
   const onCodeChange = (value: string): void => {
     setCode(value);
   };
+
+  useEffect(() => {
+    defineCodeEditorTheme(theme).catch(() => {});
+  }, []);
 
   return (
     <>
