@@ -8,11 +8,15 @@ import {
 } from '../../shared/lib/stringCharactersExtractors';
 import editorLanguageOptions from '../../shared/constants/editorLanguageOptions';
 import editorThemeOptions from '../../shared/constants/editorThemeOptions';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { codeEditorActions } from '../../store/actions';
 
 const BaseCodeEditor: FC = () => {
-  const [theme, setTheme] = useState<string>('twilight');
-  const [language, setLanguage] = useState<string>('javascript63');
   const [code, setCode] = useState<string>('');
+
+  const dispatch = useAppDispatch();
+  const codeEditorSettings = useAppSelector((state) => state.CodeEditor);
+  const { theme, language } = codeEditorSettings;
 
   const [languageTitle, setLanguageTitle] = useState<string>('Javascript');
   const [themeTitle, setThemeTitle] = useState<string>('Twilight');
@@ -21,7 +25,7 @@ const BaseCodeEditor: FC = () => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     defineCodeEditorTheme(newTheme)
       .then(() => {
-        setTheme(newTheme);
+        dispatch(codeEditorActions.changeTheme(newTheme));
       })
       .catch(() => {});
   }
@@ -31,7 +35,7 @@ const BaseCodeEditor: FC = () => {
   };
 
   const handleLanguageChange = (value: string): void => {
-    setLanguage(value);
+    dispatch(codeEditorActions.changeLanguage(value));
   };
 
   const handleThemeChange = async (value: string): void => {
