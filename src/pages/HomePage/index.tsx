@@ -1,13 +1,10 @@
 import { type FC } from 'react';
-// import Typewriter from 'typewriter-effect';
+import Typer from '../../widgets/Typer';
 import { DefaultButton } from '../../shared/ui/buttons';
 import { ReactComponent as CodespaceLogo } from '../../shared/assets/svg/CodespaceLogo.svg';
+import typeString from '../../shared/constants/typeStrings';
 
 import './styles.scss';
-import Typer from '../../widgets/Typer';
-
-const typeString =
-  'contract Campaign is Ownable {\n\tuint public minimumContribution;\n\tuint public totalApprovers;\n\n\tstruct Request {\n\t\tstring description;\n\t\tuint value;\n\t\taddress recepient;\n\t\tbool complete;\n\t\tuint approvalCount;\n\t\tuint timestamp;\n\t\tmapping(address => bool) approvals;\n\t}\n\tRequest[] public requests;\n\tmapping(address => bool) public approvers;\n\n\tconstructor(uint minimum) {\n\t\tminimumContribution = minimum;\n\t}\n\n\tfunction contribute() public payable {\n\t\trequire(msg.value > minimumContribution);';
 
 const HomePage: FC = () => {
   return (
@@ -32,21 +29,6 @@ const HomePage: FC = () => {
           </div>
           <div className="typing-container">
             <Typer text={typeString} />
-            {/* <Typewriter
-              options={{
-                autoStart: true,
-                loop: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString(
-                    'contract Campaign is Ownable {\n\tuint public minimumContribution;\n\tuint public totalApprovers;\n\n\tstruct Request{\n\t\tstring description;\n\t\tuint value;\n\t\taddress recepient;\n\t\tbool complete;\n\t\tuint approvalCount;\n\t\tuint timestamp;\n\t\tmapping(address => bool) approvals;\n\t}\n\tRequest[] public requests;\n\tmapping(address => bool) public approvers;\n\n\tconstructor(uint minimum) {\n\t\tminimumContribution = minimum;\n\t}\n\n\tfunction contribute() public payable {\n\t\trequire(msg.value > minimumContribution);',
-                  )
-                  .pauseFor(5000)
-                  .deleteAll()
-                  .start();
-              }}
-            /> */}
           </div>
         </div>
         <div className="snippet-blur" />
