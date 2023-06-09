@@ -19,7 +19,6 @@ const BaseCodeEditor: FC = () => {
   const [code, setCode] = useState<string>('');
   // eslint-disable-next-line
   const [processing, setProcessing] = useState<boolean>(false);
-  // eslint-disable-next-line
   const [outputDetails, setOutputDetails] = useState(null);
 
   const codeEditorSettings = useAppSelector((state) => state.CodeEditor);
