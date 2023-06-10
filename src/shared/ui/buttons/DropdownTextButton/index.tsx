@@ -3,14 +3,26 @@ import classNames from 'classnames';
 import RectangleButton from '../RectangleButton';
 
 import './styles.scss';
+import {
+  generateVariantClassName,
+  generateSizeClassName,
+} from '../../../lib/generateButtonClassNames';
 
 interface IDropdownTextButton extends PropsWithChildren {
   content: string;
   customClassName?: string;
   customId: string;
+  variant?: 'filled';
+  size?: 'small' | 'big';
 }
 
-const DropdownTextButton: FC<IDropdownTextButton> = ({ content, customId, children }) => {
+const DropdownTextButton: FC<IDropdownTextButton> = ({
+  content,
+  customId,
+  variant,
+  size = 'small',
+  children,
+}) => {
   const [active, toggleActive] = useState(false);
   const handleClick = (): void => {
     toggleActive(!active);
@@ -29,7 +41,16 @@ const DropdownTextButton: FC<IDropdownTextButton> = ({ content, customId, childr
       <RectangleButton handleClick={handleClick} id={customId}>
         {content}
       </RectangleButton>
-      <div className={classNames('dropdown-text-btn__details', active && 'active')}>{children}</div>
+      <div
+        className={classNames(
+          'dropdown-text-btn__details',
+          generateVariantClassName(variant),
+          generateSizeClassName(size),
+          active && 'active',
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
 };

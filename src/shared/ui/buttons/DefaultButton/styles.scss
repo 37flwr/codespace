@@ -21,7 +21,14 @@
 }
 
 .filled {
-  width: 120px;
   background-color: var(--text-primary);
   color: var(--background-primary);
+}
+
+.small-btn {
+  width: 35px;
+}
+
+.big-btn {
+  width: 120px;
 }

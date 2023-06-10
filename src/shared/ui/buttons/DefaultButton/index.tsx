@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import './styles.scss';
+import generateVariantClassName from '../../../lib/generateButtonVariantClassName';
 
 interface IDefaultButton {
   text: string;
-  variant?: string;
+  variant?: 'filled';
   icon?: JSX.Element | undefined;
   type?: string;
   onClick?: () => void;
@@ -23,22 +24,16 @@ const DefaultButton: FC<IDefaultButton> = ({
   path = '/',
   customClassName,
 }: IDefaultButton) => {
-  const generateVariantClassName = (): string => {
-    switch (variant) {
-      case 'filled':
-        return 'filled';
-      default:
-        return '';
-    }
-  };
-
-  console.log(generateVariantClassName());
   switch (type) {
     case 'button':
       return (
         <button
           onClick={onClick}
-          className={classNames('default-button', generateVariantClassName(), customClassName)}
+          className={classNames(
+            'default-button',
+            generateVariantClassName(variant),
+            customClassName,
+          )}
         >
           <>
             {icon}
