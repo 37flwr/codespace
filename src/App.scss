@@ -18,6 +18,10 @@ a {
   cursor: pointer;
 }
 
+* {
+  outline: 1px solid red;
+}
+
 :root {
   --background-primary: #d7e3fc;
   --background-additional: #7b7d81;

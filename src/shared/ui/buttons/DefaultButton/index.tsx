@@ -1,62 +1,80 @@
-import { type FC } from 'react';
+import { type PropsWithChildren, type FC } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import './styles.scss';
+import {
+  generateVariantClassName,
+  generateSizeClassName,
+} from '../../../lib/generateButtonClassNames';
 
-interface IDefaultButton {
-  text: string;
-  variant?: string;
-  icon?: JSX.Element | undefined;
+interface IDefaultButton extends PropsWithChildren {
+  text?: string;
+  variant?: 'filled';
+  size?: 'small' | 'big';
+  icon?: JSX.Element;
   type?: string;
   onClick?: () => void;
   path?: string;
   customClassName?: string;
+  id?: string;
 }
 
 const DefaultButton: FC<IDefaultButton> = ({
   text,
   icon,
   type,
+  id,
   variant,
   onClick = () => {},
   path = '/',
+  size = 'small',
   customClassName,
+  children,
 }: IDefaultButton) => {
-  const generateVariantClassName = (): string => {
-    switch (variant) {
-      case 'filled':
-        return 'filled';
-      default:
-        return '';
+  const renderButtonValue = (): JSX.Element => {
+    if (children !== null) {
+      return <>{children}</>;
+    } else {
+      return (
+        <>
+          {icon}
+          {text}
+        </>
+      );
     }
   };
 
-  console.log(generateVariantClassName());
   switch (type) {
-    case 'button':
-      return (
-        <button
-          onClick={onClick}
-          className={classNames('default-button', generateVariantClassName(), customClassName)}
-        >
-          <>
-            {icon}
-            {text}
-          </>
-        </button>
-      );
-    default:
+    case 'link':
       return (
         <Link
           to={path}
-          className={classNames('default-button', generateVariantClassName(), customClassName)}
+          className={classNames(
+            'default-button',
+            generateVariantClassName(variant),
+            generateSizeClassName(size),
+            customClassName,
+          )}
+          id={id}
         >
-          <>
-            {icon}
-            {text}
-          </>
+          {renderButtonValue()}
         </Link>
+      );
+    default:
+      return (
+        <button
+          onClick={onClick}
+          className={classNames(
+            'default-button',
+            generateVariantClassName(variant),
+            generateSizeClassName(size),
+            customClassName,
+          )}
+          id={id}
+        >
+          {renderButtonValue()}
+        </button>
       );
   }
 };
