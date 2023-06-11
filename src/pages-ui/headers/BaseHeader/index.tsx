@@ -97,6 +97,7 @@ const BaseHeader: FC<IHeader> = ({ themeHandler, currentTheme }) => {
         <ChangeThemeButton onClick={themeHandler} theme={currentTheme} />
         {headerButtons
           .filter(({ show }) => show)
+          // @ts-expect-error btnProps should have type param either square or rectangle
           .map((btnProps, idx) => renderButton(btnProps, idx))}
       </div>
     </section>
