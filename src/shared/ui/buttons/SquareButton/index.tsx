@@ -10,10 +10,16 @@ interface ISquareButton extends PropsWithChildren {
   id?: string;
 }
 
-const SquareButton: FC<ISquareButton> = ({ children, path, customClassName, onClick }) => {
+const SquareButton: FC<ISquareButton> = ({ children, path, customClassName, onClick, id }) => {
   if (path !== null && path !== undefined) {
     return (
-      <DefaultButton customClassName={customClassName} path={path} size="small" variant="filled">
+      <DefaultButton
+        path={path}
+        size="small"
+        variant="filled"
+        id={id}
+        customClassName={customClassName}
+      >
         {children}
       </DefaultButton>
     );
@@ -21,10 +27,11 @@ const SquareButton: FC<ISquareButton> = ({ children, path, customClassName, onCl
 
   return (
     <DefaultButton
-      customClassName={customClassName}
       onClick={onClick}
       size="small"
       variant="filled"
+      id={id}
+      customClassName={customClassName}
     >
       {children}
     </DefaultButton>
