@@ -14,7 +14,9 @@ const HomePage: FC = () => {
         <h4 className="home-page__hero__text">
           Codespace enables users to build beatiful web applications right in the browser
         </h4>
-        <RectangleButton path="/editor">{'</> Code'}</RectangleButton>
+        <RectangleButton variant="filled" path="/editor">
+          {'</> Code'}
+        </RectangleButton>
       </div>
       <div className="home-page__snippet_container">
         <div className="home-page__snippet_blur" />

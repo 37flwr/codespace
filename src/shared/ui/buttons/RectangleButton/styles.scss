@@ -1,9 +1,8 @@
 .rectangle-button {
   svg {
     height: 75%;
-    width: 75%;
+    width: auto;
     pointer-events: none;
-    margin-top: 3px;
 
     color: var(--text-primary);
   }

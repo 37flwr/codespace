@@ -46,22 +46,7 @@ const DefaultButton: FC<IDefaultButton> = ({
   };
 
   switch (type) {
-    case 'button':
-      return (
-        <button
-          onClick={onClick}
-          className={classNames(
-            'default-button',
-            generateVariantClassName(variant),
-            generateSizeClassName(size),
-            customClassName,
-          )}
-          id={id}
-        >
-          {renderButtonValue()}
-        </button>
-      );
-    default:
+    case 'link':
       return (
         <Link
           to={path}
@@ -75,6 +60,21 @@ const DefaultButton: FC<IDefaultButton> = ({
         >
           {renderButtonValue()}
         </Link>
+      );
+    default:
+      return (
+        <button
+          onClick={onClick}
+          className={classNames(
+            'default-button',
+            generateVariantClassName(variant),
+            generateSizeClassName(size),
+            customClassName,
+          )}
+          id={id}
+        >
+          {renderButtonValue()}
+        </button>
       );
   }
 };

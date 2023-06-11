@@ -3,7 +3,7 @@ const generateVariantClassName = (variant?: 'filled'): string => {
     case 'filled':
       return 'filled';
     default:
-      return '';
+      return 'unfilled';
   }
 };
 

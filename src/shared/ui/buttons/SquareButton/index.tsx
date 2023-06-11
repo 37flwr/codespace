@@ -10,6 +10,7 @@ const SquareButton: FC<IButtonFactory> = ({ children, path, customClassName, onC
     return (
       <DefaultButton
         path={path}
+        type="link"
         size="small"
         variant="filled"
         id={id}

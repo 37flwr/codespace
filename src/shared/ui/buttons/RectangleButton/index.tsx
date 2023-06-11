@@ -5,13 +5,21 @@ import type IButtonFactory from '../../../interfaces/IButtonFactory.interface';
 
 import './styles.scss';
 
-const RectangleButton: FC<IButtonFactory> = ({ children, path, onClick, id, customClassName }) => {
+const RectangleButton: FC<IButtonFactory> = ({
+  children,
+  path,
+  onClick,
+  id,
+  variant,
+  customClassName,
+}) => {
   if (path !== null && path !== undefined) {
     return (
       <DefaultButton
         path={path}
+        type="link"
         size="big"
-        variant="filled"
+        variant={variant}
         id={id}
         customClassName={cn('rectangle-button', customClassName)}
       >
@@ -24,7 +32,7 @@ const RectangleButton: FC<IButtonFactory> = ({ children, path, onClick, id, cust
     <DefaultButton
       onClick={onClick}
       size="big"
-      variant="filled"
+      variant={variant}
       id={id}
       customClassName={cn('rectangle-button', customClassName)}
     >

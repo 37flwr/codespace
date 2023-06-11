@@ -15,8 +15,12 @@
   font-size: 16px;
   color: var(--text-primary);
 
-  svg {
-    margin-right: 8px;
+  &_gap {
+    &_default {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
   }
 }
 
@@ -25,10 +29,21 @@
   color: var(--background-primary);
 }
 
+.unfilled {
+  background-color: none;
+}
+
 .small-btn {
   width: 35px;
 }
 
 .big-btn {
   width: 120px;
+}
+
+.small-svg {
+  svg {
+    width: 50%;
+    height: 50%;
+  }
 }
