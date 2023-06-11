@@ -9,14 +9,34 @@ interface IRectangleButton extends PropsWithChildren {
   id?: string;
 }
 
-const RectangleButton: FC<IRectangleButton> = ({ customClassName, onClick, id, children }) => {
+const RectangleButton: FC<IRectangleButton> = ({
+  customClassName,
+  path,
+  onClick,
+  id,
+  children,
+}) => {
+  if (path !== null && path !== undefined) {
+    return (
+      <DefaultButton
+        path={path}
+        size="big"
+        variant="filled"
+        id={id}
+        customClassName={customClassName}
+      >
+        {children}
+      </DefaultButton>
+    );
+  }
+
   return (
     <DefaultButton
-      variant="filled"
-      size="big"
-      customClassName={customClassName}
       onClick={onClick}
+      size="big"
+      variant="filled"
       id={id}
+      customClassName={customClassName}
     >
       {children}
     </DefaultButton>
