@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import cn from 'classnames';
 import { DefaultButton } from '..';
 import type IButtonFactory from '../../../interfaces/IButtonFactory.interface';
 
@@ -12,7 +13,7 @@ const RectangleButton: FC<IButtonFactory> = ({ children, path, onClick, id, cust
         size="big"
         variant="filled"
         id={id}
-        customClassName={customClassName}
+        customClassName={cn('rectangle-button', customClassName)}
       >
         {children}
       </DefaultButton>
@@ -25,7 +26,7 @@ const RectangleButton: FC<IButtonFactory> = ({ children, path, onClick, id, cust
       size="big"
       variant="filled"
       id={id}
-      customClassName={customClassName}
+      customClassName={cn('rectangle-button', customClassName)}
     >
       {children}
     </DefaultButton>

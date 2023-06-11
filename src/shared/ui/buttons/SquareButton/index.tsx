@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import { DefaultButton } from '..';
+import cn from 'classnames';
 import type IButtonFactory from '../../../interfaces/IButtonFactory.interface';
 
 import './styles.scss';
@@ -12,7 +13,7 @@ const SquareButton: FC<IButtonFactory> = ({ children, path, customClassName, onC
         size="small"
         variant="filled"
         id={id}
-        customClassName={customClassName}
+        customClassName={cn('square-button', customClassName)}
       >
         {children}
       </DefaultButton>
@@ -25,7 +26,7 @@ const SquareButton: FC<IButtonFactory> = ({ children, path, customClassName, onC
       size="small"
       variant="filled"
       id={id}
-      customClassName={customClassName}
+      customClassName={cn('square-button', customClassName)}
     >
       {children}
     </DefaultButton>

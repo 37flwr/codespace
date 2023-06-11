@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import Typer from '../../widgets/Typer';
-import { DefaultButton } from '../../shared/ui/buttons';
+import { RectangleButton } from '../../shared/ui/buttons';
 import { ReactComponent as CodespaceLogo } from '../../shared/assets/svg/CodespaceLogo.svg';
 import typeString from '../../shared/constants/typeStrings';
 
@@ -14,7 +14,7 @@ const HomePage: FC = () => {
         <h4 className="home-page__hero__text">
           Codespace enables users to build beatiful web applications right in the browser
         </h4>
-        <DefaultButton text="</> Code" path="/editor" variant="filled" />
+        <RectangleButton path="/editor">{'</> Code'}</RectangleButton>
       </div>
       <div className="home-page__snippet_container">
         <div className="home-page__snippet_blur" />
