@@ -1,16 +1,10 @@
-import { type FC, type PropsWithChildren } from 'react';
+import { type FC } from 'react';
 import { DefaultButton } from '..';
+import type IButtonFactory from '../../../interfaces/IButtonFactory.interface';
 
 import './styles.scss';
 
-interface ISquareButton extends PropsWithChildren {
-  path?: string;
-  customClassName?: string;
-  onClick?: () => void;
-  id?: string;
-}
-
-const SquareButton: FC<ISquareButton> = ({ children, path, customClassName, onClick, id }) => {
+const SquareButton: FC<IButtonFactory> = ({ children, path, customClassName, onClick, id }) => {
   if (path !== null && path !== undefined) {
     return (
       <DefaultButton

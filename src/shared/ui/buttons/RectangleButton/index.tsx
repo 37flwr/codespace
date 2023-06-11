@@ -1,21 +1,10 @@
-import { type PropsWithChildren, type FC } from 'react';
+import { type FC } from 'react';
 import { DefaultButton } from '..';
+import type IButtonFactory from '../../../interfaces/IButtonFactory.interface';
+
 import './styles.scss';
 
-interface IRectangleButton extends PropsWithChildren {
-  path?: string;
-  customClassName?: string;
-  onClick?: () => void;
-  id?: string;
-}
-
-const RectangleButton: FC<IRectangleButton> = ({
-  customClassName,
-  path,
-  onClick,
-  id,
-  children,
-}) => {
+const RectangleButton: FC<IButtonFactory> = ({ children, path, onClick, id, customClassName }) => {
   if (path !== null && path !== undefined) {
     return (
       <DefaultButton

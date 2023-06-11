@@ -1,12 +1,12 @@
 import { type PropsWithChildren, useState, type FC } from 'react';
 import classNames from 'classnames';
 import RectangleButton from '../RectangleButton';
-
-import './styles.scss';
 import {
   generateVariantClassName,
   generateSizeClassName,
 } from '../../../lib/generateButtonClassNames';
+
+import './styles.scss';
 
 interface IDropdownTextButton extends PropsWithChildren {
   content: string;
