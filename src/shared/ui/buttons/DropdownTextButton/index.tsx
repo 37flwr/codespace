@@ -38,7 +38,7 @@ const DropdownTextButton: FC<IDropdownTextButton> = ({
 
   return (
     <div className="dropdown-text-btn_wrapper">
-      <RectangleButton handleClick={handleClick} id={customId}>
+      <RectangleButton onClick={handleClick} id={customId}>
         {content}
       </RectangleButton>
       <div

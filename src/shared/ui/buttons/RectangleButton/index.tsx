@@ -3,18 +3,19 @@ import { DefaultButton } from '..';
 import './styles.scss';
 
 interface IRectangleButton extends PropsWithChildren {
+  path?: string;
   customClassName?: string;
-  handleClick: any;
+  onClick?: () => void;
   id?: string;
 }
 
-const RectangleButton: FC<IRectangleButton> = ({ customClassName, handleClick, id, children }) => {
+const RectangleButton: FC<IRectangleButton> = ({ customClassName, onClick, id, children }) => {
   return (
     <DefaultButton
       variant="filled"
       size="big"
       customClassName={customClassName}
-      onClick={handleClick}
+      onClick={onClick}
       id={id}
     >
       {children}
