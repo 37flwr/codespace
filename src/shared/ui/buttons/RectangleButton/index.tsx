@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import { type PropsWithChildren, type FC } from 'react';
+import { DefaultButton } from '..';
 import './styles.scss';
 
 interface IRectangleButton extends PropsWithChildren {
@@ -10,13 +10,15 @@ interface IRectangleButton extends PropsWithChildren {
 
 const RectangleButton: FC<IRectangleButton> = ({ customClassName, handleClick, id, children }) => {
   return (
-    <button
-      className={classNames('rectangle-button', customClassName)}
+    <DefaultButton
+      variant="filled"
+      size="big"
+      customClassName={customClassName}
       onClick={handleClick}
       id={id}
     >
       {children}
-    </button>
+    </DefaultButton>
   );
 };
 
