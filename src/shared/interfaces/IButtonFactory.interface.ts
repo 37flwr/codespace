@@ -4,7 +4,7 @@ interface IButtonFactory extends PropsWithChildren {
   path?: string;
   onClick?: () => void;
   id?: string;
-  variant?: 'filled';
+  variant?: 'filled' | 'bordered';
   customClassName?: string;
 }
 
