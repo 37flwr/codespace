@@ -3,7 +3,8 @@ import ChangeThemeButton from '../../../entities/buttons/ChangeThemeButton';
 import { RectangleButton, SquareButton } from '../../../shared/ui/buttons';
 import HeaderLogo from '../ui/HeaderLogo';
 
-import { ReactComponent as IconExplore } from '../../../shared/assets/svg/Explore.svg';
+// import { ReactComponent as IconExplore } from '../../../shared/assets/svg/Explore.svg';
+import ExploreIcon from '../../../shared/assets/svg/Explore';
 import { ReactComponent as IconDiscord } from '../../../shared/assets/svg/Discord.svg';
 
 import '../styles.scss';
@@ -11,7 +12,7 @@ import '../styles.scss';
 const headerButtons = [
   {
     text: 'Explore',
-    Icon: IconExplore,
+    Icon: ExploreIcon,
     type: 'rectangle',
     path: '/explore',
     show: true,
