@@ -1,8 +1,8 @@
 import { type FC } from 'react';
 import { SquareButton } from '../../../shared/ui/buttons';
 
-import { ReactComponent as IconLightTheme } from '../../../shared/assets/svg/LightTheme.svg';
-import { ReactComponent as IconDarkTheme } from '../../../shared/assets/svg/DarkTheme.svg';
+import IconLightTheme from '../../../shared/assets/svg/LightTheme';
+import IconDarkTheme from '../../../shared/assets/svg/DarkTheme';
 
 interface IChangeThemeButton {
   theme: 'light' | 'dark';
@@ -12,11 +12,7 @@ interface IChangeThemeButton {
 const ChangeThemeButton: FC<IChangeThemeButton> = ({ theme, onClick }) => {
   return (
     <SquareButton onClick={onClick}>
-      {theme === 'light' ? (
-        <IconLightTheme width="85%" height="85%" />
-      ) : (
-        <IconDarkTheme width="75%" height="75%" />
-      )}
+      {theme === 'light' ? <IconLightTheme /> : <IconDarkTheme />}
     </SquareButton>
   );
 };

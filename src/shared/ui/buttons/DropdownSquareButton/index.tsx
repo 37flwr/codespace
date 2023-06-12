@@ -1,10 +1,10 @@
 import { type PropsWithChildren, useState, type FC } from 'react';
 import classNames from 'classnames';
-import { ReactComponent as IconEditorsTop } from '../../../assets/svg/EditorsTop.svg';
-import { ReactComponent as IconEditorsLeft } from '../../../assets/svg/EditorsLeft.svg';
-import { ReactComponent as IconEditorsRight } from '../../../assets/svg/EditorsRight.svg';
-import './styles.scss';
 import { SquareButton } from '..';
+import IconEditorsTop from '../../../assets/svg/EditorsTop';
+import IconEditorsLeft from '../../../assets/svg/EditorsLeft';
+import IconEditorsRight from '../../../assets/svg/EditorsRight';
+import './styles.scss';
 
 interface IDropdownSquareButton extends PropsWithChildren {
   content: string;

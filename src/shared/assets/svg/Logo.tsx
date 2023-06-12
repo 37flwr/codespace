@@ -1,6 +1,6 @@
 import ThemeAwareIcon from '../../ui/theme-aware/ThemeAwareIcon';
 
-const CodespaceLogo = ({ className }: { className?: string }): JSX.Element => {
+const IconLogo = ({ className }: { className?: string }): JSX.Element => {
   return (
     <ThemeAwareIcon>
       <svg
@@ -18,4 +18,4 @@ const CodespaceLogo = ({ className }: { className?: string }): JSX.Element => {
   );
 };
 
-export default CodespaceLogo;
+export default IconLogo;
