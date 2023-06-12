@@ -1,11 +1,11 @@
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
-import CodespaceLogo from '../../../shared/assets/svg/CodespaceLogo';
+import IconLogo from '../../../shared/assets/svg/Logo';
 
 const HeaderLogo: FC = () => {
   return (
     <Link to="/" className="header-logo-container text-heading">
-      <CodespaceLogo className="header-logo" />
+      <IconLogo className="header-logo" />
       <span className="header-logo-text">Codespace</span>
     </Link>
   );

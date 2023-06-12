@@ -6,7 +6,7 @@ import type IHeader from '../../../shared/interfaces/IHeader.interface';
 import { DropdownSquareButton, SquareButton } from '../../../shared/ui/buttons';
 import HeaderLogo from '../ui/HeaderLogo';
 
-import { ReactComponent as IconSettings } from '../../../shared/assets/svg/Settings.svg';
+import IconSettings from '../../../shared/assets/svg/Settings';
 
 import '../styles.scss';
 

@@ -2,9 +2,9 @@ import { type FC, useEffect } from 'react';
 import { Form } from 'formik';
 import { RadioFormField } from '../../../entities/formik/fields';
 
-import { ReactComponent as IconEditorsTop } from '../../../shared/assets/svg/EditorsTop.svg';
-import { ReactComponent as IconEditorsLeft } from '../../../shared/assets/svg/EditorsLeft.svg';
-import { ReactComponent as IconEditorsRight } from '../../../shared/assets/svg/EditorsRight.svg';
+import IconEditorsTop from '../../../shared/assets/svg/EditorsTop';
+import IconEditorsLeft from '../../../shared/assets/svg/EditorsLeft';
+import IconEditorsRight from '../../../shared/assets/svg/EditorsRight';
 
 import './styles.scss';
 

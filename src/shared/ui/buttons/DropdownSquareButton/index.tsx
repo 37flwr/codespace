@@ -1,8 +1,9 @@
 import { type PropsWithChildren, useState, type FC } from 'react';
 import classNames from 'classnames';
-import { ReactComponent as IconEditorsTop } from '../../../assets/svg/EditorsTop.svg';
-import { ReactComponent as IconEditorsLeft } from '../../../assets/svg/EditorsLeft.svg';
-import { ReactComponent as IconEditorsRight } from '../../../assets/svg/EditorsRight.svg';
+import { SquareButton } from '..';
+import IconEditorsTop from '../../../assets/svg/EditorsTop';
+import IconEditorsLeft from '../../../assets/svg/EditorsLeft';
+import IconEditorsRight from '../../../assets/svg/EditorsRight';
 import './styles.scss';
 
 interface IDropdownSquareButton extends PropsWithChildren {
@@ -19,13 +20,15 @@ const DropdownSquareButton: FC<IDropdownSquareButton> = ({
 }) => {
   const [active, toggleActive] = useState(false);
   const handleClick = (): void => {
-    toggleActive(!active);
+    toggleActive(true);
+    console.log(active);
   };
 
   // Handle click outside of the button
   const button = document.getElementById(customId);
   window.onclick = function (event) {
-    if (event.target !== button) {
+    console.log();
+    if (button?.contains(event.target as Node) === false) {
       toggleActive(false);
     }
   };
@@ -44,16 +47,10 @@ const DropdownSquareButton: FC<IDropdownSquareButton> = ({
   };
 
   return (
-    <div className="square-button-wrapper">
-      <button
-        className={classNames('square-button', customClassName)}
-        onClick={() => {
-          handleClick();
-        }}
-        id={customId}
-      >
+    <div className="dropdown-square-button">
+      <SquareButton onClick={handleClick} id={customId} customClassName={customClassName}>
         {themeIcon(content)}
-      </button>
+      </SquareButton>
       <div className={classNames('button-details', active && 'active')}>{children}</div>
     </div>
   );

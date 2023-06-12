@@ -1,6 +1,6 @@
 import ThemeAwareIcon from '../../ui/theme-aware/ThemeAwareIcon';
 
-const ExploreIcon = (): JSX.Element => {
+const IconExplore = (): JSX.Element => {
   return (
     <ThemeAwareIcon>
       <svg
@@ -21,4 +21,4 @@ const ExploreIcon = (): JSX.Element => {
   );
 };
 
-export default ExploreIcon;
+export default IconExplore;
