@@ -11,7 +11,7 @@ interface IChangeThemeButton {
 
 const ChangeThemeButton: FC<IChangeThemeButton> = ({ theme, onClick }) => {
   return (
-    <SquareButton onClick={onClick} customClassName="small-svg">
+    <SquareButton onClick={onClick}>
       {theme === 'light' ? (
         <IconLightTheme width="85%" height="85%" />
       ) : (
