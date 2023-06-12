@@ -12,7 +12,7 @@ interface IDropdownTextButton extends PropsWithChildren {
   content: string;
   customClassName?: string;
   customId: string;
-  variant?: 'filled';
+  variant?: 'filled' | 'bordered';
   size?: 'small' | 'big';
 }
 
@@ -38,7 +38,7 @@ const DropdownTextButton: FC<IDropdownTextButton> = ({
 
   return (
     <div className="dropdown-text-btn_wrapper">
-      <RectangleButton onClick={handleClick} id={customId}>
+      <RectangleButton variant={variant} onClick={handleClick} id={customId}>
         {content}
       </RectangleButton>
       <div

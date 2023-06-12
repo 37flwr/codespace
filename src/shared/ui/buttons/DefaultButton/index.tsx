@@ -10,7 +10,7 @@ import {
 
 interface IDefaultButton extends PropsWithChildren {
   text?: string;
-  variant?: 'filled';
+  variant?: 'filled' | 'bordered';
   size?: 'small' | 'big';
   icon?: JSX.Element;
   type?: string;

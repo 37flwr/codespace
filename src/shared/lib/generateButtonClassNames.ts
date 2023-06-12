@@ -1,7 +1,9 @@
-const generateVariantClassName = (variant?: 'filled'): string => {
+const generateVariantClassName = (variant?: 'filled' | 'bordered'): string => {
   switch (variant) {
     case 'filled':
       return 'filled';
+    case 'bordered':
+      return 'bordered';
     default:
       return 'unfilled';
   }

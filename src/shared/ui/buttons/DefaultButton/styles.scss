@@ -12,7 +12,10 @@
 
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   color: var(--text-primary);
 
   &_gap {
@@ -27,6 +30,10 @@
 .filled {
   background-color: var(--text-primary);
   color: var(--background-primary);
+}
+
+.bordered {
+  border: 1px solid var(--text-primary);
 }
 
 .unfilled {
