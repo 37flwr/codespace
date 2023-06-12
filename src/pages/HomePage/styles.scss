@@ -157,6 +157,10 @@
         justify-content: center;
         gap: 8px;
 
+        &__svg {
+          color: var(--background-additional) !important;
+        }
+
         &__text {
           font-weight: 600;
           font-size: 20px;

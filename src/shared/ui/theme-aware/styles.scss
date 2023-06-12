@@ -1,0 +1,9 @@
+.theme-aware-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    color: var(--text-primary);
+  }
+}

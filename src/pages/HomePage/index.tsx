@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import Typer from '../../widgets/Typer';
 import { RectangleButton } from '../../shared/ui/buttons';
-import { ReactComponent as CodespaceLogo } from '../../shared/assets/svg/CodespaceLogo.svg';
+import CodespaceLogo from '../../shared/assets/svg/CodespaceLogo';
 import typeString from '../../shared/constants/typeStrings';
 
 import './styles.scss';
@@ -25,7 +25,7 @@ const HomePage: FC = () => {
           <div className="home-page__snippet__header">
             <span className="home-page__snippet__header__leftside">+ Start a new project</span>
             <div className="home-page__snippet__header__logo">
-              <CodespaceLogo />
+              <CodespaceLogo className="home-page__snippet__header__logo__svg" />
               <span className="home-page__snippet__header__logo__text">Codespace</span>
             </div>
             <span className="home-page__snippet__header__rightside">Profile</span>

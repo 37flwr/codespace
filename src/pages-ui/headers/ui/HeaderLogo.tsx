@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as CodespaceLogo } from '../../../shared/assets/svg/CodespaceLogo.svg';
+import CodespaceLogo from '../../../shared/assets/svg/CodespaceLogo';
 
 const HeaderLogo: FC = () => {
   return (
