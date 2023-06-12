@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import Typer from '../../widgets/Typer';
 import { RectangleButton } from '../../shared/ui/buttons';
-import { ReactComponent as CodespaceLogo } from '../../shared/assets/svg/CodespaceLogo.svg';
+import CodespaceLogo from '../../shared/assets/svg/CodespaceLogo';
 import typeString from '../../shared/constants/typeStrings';
 
 import './styles.scss';
