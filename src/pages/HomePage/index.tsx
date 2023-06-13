@@ -1,6 +1,5 @@
 import { type FC } from 'react';
-import BottomSnippet from '../../entities/snippets/BottomSnippet';
-import TopSnippet from '../../entities/snippets/TopSnippet';
+import { BottomSnippet, TopSnippet } from '../../entities/snippets';
 import { RectangleButton } from '../../shared/ui/buttons';
 import './styles.scss';
 
