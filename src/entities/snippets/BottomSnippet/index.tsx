@@ -1,4 +1,4 @@
-import { SquareButton } from '../../../shared/ui/buttons';
+import { RectangleButton } from '../../../shared/ui/buttons';
 import './styles.scss';
 
 const BottomSnippet = (): JSX.Element => (
@@ -6,9 +6,9 @@ const BottomSnippet = (): JSX.Element => (
     <div className="bottom-snippet_blur" />
     <div className="bottom-snippet_container_background" />
     <div className="bottom-snippet">
-      <SquareButton path="/editor" variant="filled">
+      <RectangleButton path="/editor" variant="filled">
         {'</> Code'}
-      </SquareButton>
+      </RectangleButton>
     </div>
   </div>
 );
