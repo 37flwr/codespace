@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import BottomSnippet from '../../entities/snippets/BottomSnippet';
 import TopSnippet from '../../entities/snippets/TopSnippet';
 import { RectangleButton } from '../../shared/ui/buttons';
 import './styles.scss';
@@ -16,6 +17,10 @@ const HomePage: FC = () => {
         </RectangleButton>
       </div>
       <TopSnippet />
+      <br />
+      <br />
+      <br />
+      <BottomSnippet />
     </section>
   );
 };
