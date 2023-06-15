@@ -23,7 +23,7 @@ function App(): JSX.Element {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Router>
+        <Router basename="/codespace">
           <div className="App" data-theme={theme}>
             <Layout themeHandler={switchTheme} currentTheme={theme}>
               <AppRoutes />

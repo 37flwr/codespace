@@ -1,4 +1,4 @@
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { useRoutes } from 'react-router';
 
 import EditorPage from '../pages/EditorPage';
 import HomePage from '../pages/HomePage';
@@ -14,10 +14,8 @@ const publicRoutes = [
   },
 ];
 
-const router = createHashRouter(publicRoutes);
-
 const AppRoutes = (): JSX.Element | null => {
-  return <RouterProvider router={router} />;
+  return useRoutes(publicRoutes);
 };
 
 export default AppRoutes;
