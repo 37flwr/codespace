@@ -13,7 +13,6 @@ import {
 } from '../../shared/lib/parseCodeEditorVitals';
 import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
 import OutputWindow from '../../entities/code-editor/OutputWindow';
-import { DefaultButton } from '../../shared/ui/buttons';
 
 const BaseCodeEditor: FC = () => {
   const [code, setCode] = useState<string>('');
@@ -102,20 +101,24 @@ const BaseCodeEditor: FC = () => {
   }, []);
 
   return (
-    <>
+    <section className="code-editor">
       <CodeEditorNavBar
         lang={parseCodeEditorLanguage(language)}
         theme={parseCodeEditorTheme(theme)}
+        handleCompile={handleCompile}
       />
-      <CodeEditor
-        theme={theme}
-        language={extractAlphabeticChars(language)}
-        code={code}
-        onChange={onCodeChange}
-      />
-      {outputDetails !== null && <OutputWindow outputDetails={outputDetails} />}
-      <DefaultButton type="button" variant="filled" text="Compile" onClick={handleCompile} />
-    </>
+      <div className="code-editor__body">
+        <CodeEditor
+          theme={theme}
+          language={extractAlphabeticChars(language)}
+          code={code}
+          onChange={onCodeChange}
+        />
+        <div className="code-editor__body__output">
+          {outputDetails !== null && <OutputWindow outputDetails={outputDetails} />}
+        </div>
+      </div>
+    </section>
   );
 };
 

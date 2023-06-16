@@ -36,38 +36,38 @@
   }
 }
 
-.editors-left {
-  flex-direction: row;
+// .editors-left {
+//   flex-direction: row;
 
-  .editors-group {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+//   .editors-group {
+//     width: 50%;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
 
-    .editor {
-      width: 100%;
-      height: 32%;
-    }
-  }
+//     .editor {
+//       width: 100%;
+//       height: 32%;
+//     }
+//   }
 
-  iframe {
-    width: 50%;
-    height: 100%;
-  }
-}
+//   iframe {
+//     width: 50%;
+//     height: 100%;
+//   }
+// }
 
-.editors-right {
-  flex-direction: row-reverse;
+// .editors-right {
+//   flex-direction: row-reverse;
 
-  .editors-group {
-    width: 50%;
-    height: 100%;
-  }
+//   .editors-group {
+//     width: 50%;
+//     height: 100%;
+//   }
 
-  iframe {
-    width: 50%;
-    height: 100%;
-  }
-}
+//   iframe {
+//     width: 50%;
+//     height: 100%;
+//   }
+// }
