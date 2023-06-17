@@ -1,0 +1,13 @@
+.code-editor {
+  &__navbar {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}

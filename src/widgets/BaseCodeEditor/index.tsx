@@ -13,6 +13,7 @@ import {
 } from '../../shared/lib/parseCodeEditorVitals';
 import { defineCodeEditorTheme } from '../../shared/lib/defineCodeEditorTheme';
 import OutputWindow from '../../entities/code-editor/OutputWindow';
+import './styles.scss';
 
 const BaseCodeEditor: FC = () => {
   const [code, setCode] = useState<string>('');
