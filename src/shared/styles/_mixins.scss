@@ -45,3 +45,13 @@
     pointer-events: none;
   }
 }
+
+@mixin dark-border($border-radius) {
+  border-radius: $border-radius;
+  border: 1px solid var(--dark-grey);
+}
+
+@mixin standard-border($border-radius) {
+  border-radius: $border-radius;
+  border: 1px solid var(--text-primary);
+}
