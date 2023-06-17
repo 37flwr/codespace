@@ -1,5 +1,6 @@
 import { type FC, useState } from 'react';
 import Editor from '@monaco-editor/react';
+import './styles.scss';
 
 interface ICodeEditor {
   onChange: (arg0: string, arg1?: string) => void;
@@ -26,6 +27,7 @@ const CodeEditor: FC<ICodeEditor> = ({ onChange, language = 'javascript', code, 
       theme={theme}
       defaultValue="// some comment"
       onChange={handleEditorChange}
+      className="editor"
     />
   );
 };
