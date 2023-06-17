@@ -1,3 +1,5 @@
+@import '../../../shared/styles/mixins';
+
 .top-snippet {
   &_container {
     position: relative;
@@ -58,41 +60,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 3px; /* control the border thickness */
-
-    border-radius: 20px 20px 0px 0px;
-    background: linear-gradient(
-      112.02deg,
-      #ff0000 0%,
-      #e6740b 23.96%,
-      #f0d90a 48.96%,
-      #10ee19 73.96%,
-      #b019e6 98.96%
-    );
-    -webkit-mask: linear-gradient(
-          112.02deg,
-          #ff0000 0%,
-          #e6740b 23.96%,
-          #f0d90a 48.96%,
-          #10ee19 73.96%,
-          #b019e6 98.96%
-        )
-        content-box,
-      linear-gradient(
-        112.02deg,
-        #ff0000 0%,
-        #e6740b 23.96%,
-        #f0d90a 48.96%,
-        #10ee19 73.96%,
-        #b019e6 98.96%
-      );
-    mask-composite: exclude;
-    pointer-events: none;
-  }
+  @include rainbow-border(3px, 20px, 20px, 0px, 0px);
 
   &__header {
     display: grid;

@@ -1,10 +1,11 @@
+@import '../../../shared/styles/mixins';
+
 .output {
   display: flex;
   flex-direction: column;
 
-  border-radius: 5px;
   box-sizing: border-box;
-  border: 1px solid var(--dark-grey);
+  @include dark-border(5px);
 
   &__header {
     width: 100%;
@@ -16,6 +17,8 @@
     padding-left: 10px;
     color: var(--text-primary);
     box-sizing: border-box;
+
+    @include rainbow-border(1px, 4px, 4px, 0px, 0px);
   }
 
   &__result {

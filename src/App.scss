@@ -33,6 +33,7 @@ a {
   --dark-grey: #1c1d1f;
 
   --header-height: 110px;
+  --page-padding: 15px;
 }
 
 .text-heading {
@@ -45,46 +46,4 @@ a {
   --background-bonus: #343d43;
   --text-primary: #fff;
   --text-additional: #37393d;
-}
-
-.slim-rainbow-border {
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 1px; /* control the border thickness */
-    border-radius: 3px 3px 0px 0px;
-
-    background: linear-gradient(
-      112.02deg,
-      #ff0000 0%,
-      #e6740b 23.96%,
-      #f0d90a 48.96%,
-      #10ee19 73.96%,
-      #b019e6 98.96%
-    );
-    -webkit-mask: linear-gradient(
-          112.02deg,
-          #ff0000 0%,
-          #e6740b 23.96%,
-          #f0d90a 48.96%,
-          #10ee19 73.96%,
-          #b019e6 98.96%
-        )
-        content-box,
-      linear-gradient(
-        112.02deg,
-        #ff0000 0%,
-        #e6740b 23.96%,
-        #f0d90a 48.96%,
-        #10ee19 73.96%,
-        #b019e6 98.96%
-      );
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-}
-
-.no-scroll-page {
-  height: calc(100vh - var(--header-height) - 15px);
 }

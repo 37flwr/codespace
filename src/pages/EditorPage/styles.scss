@@ -1,5 +1,7 @@
+@import '../../shared/styles/mixins';
+
 .editor-page {
-  height: calc(100vh - 60px);
+  @include no-scroll-page;
   padding-top: 15px;
   padding-bottom: 40px;
   box-sizing: border-box;

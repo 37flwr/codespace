@@ -55,7 +55,7 @@ const OutputWindow: FC<IOutputWindow> = ({ outputDetails }) => {
 
   return (
     <div className="output">
-      <div className="output__header slim-rainbow-border">Compilation result</div>
+      <div className="output__header">Compilation result</div>
       <div className="output__result">
         {outputDetails !== undefined && getOutput(outputDetails)}
       </div>

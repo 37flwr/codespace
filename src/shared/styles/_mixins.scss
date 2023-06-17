@@ -1,0 +1,57 @@
+@mixin no-scroll-page {
+  height: calc(100vh - var(--header-height) - var(--page-padding));
+}
+
+@mixin rainbow-border(
+  $border-thickness,
+  $border-left-top,
+  $border-right-top,
+  $border-right-bottom,
+  $border-left-bottom
+) {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: $border-thickness;
+    border-radius: $border-left-top $border-right-top $border-right-bottom $border-left-bottom;
+
+    background: linear-gradient(
+      112.02deg,
+      #ff0000 0%,
+      #e6740b 23.96%,
+      #f0d90a 48.96%,
+      #10ee19 73.96%,
+      #b019e6 98.96%
+    );
+    -webkit-mask: linear-gradient(
+          112.02deg,
+          #ff0000 0%,
+          #e6740b 23.96%,
+          #f0d90a 48.96%,
+          #10ee19 73.96%,
+          #b019e6 98.96%
+        )
+        content-box,
+      linear-gradient(
+        112.02deg,
+        #ff0000 0%,
+        #e6740b 23.96%,
+        #f0d90a 48.96%,
+        #10ee19 73.96%,
+        #b019e6 98.96%
+      );
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@mixin dark-border($border-radius) {
+  border-radius: $border-radius;
+  border: 1px solid var(--dark-grey);
+}
+
+@mixin standard-border($border-radius) {
+  border-radius: $border-radius;
+  border: 1px solid var(--text-primary);
+}
