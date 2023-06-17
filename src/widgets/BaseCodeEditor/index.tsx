@@ -19,7 +19,7 @@ const BaseCodeEditor: FC = () => {
   const [code, setCode] = useState<string>('');
   // eslint-disable-next-line
   const [processing, setProcessing] = useState<boolean>(false);
-  const [outputDetails, setOutputDetails] = useState(null);
+  const [outputDetails, setOutputDetails] = useState(undefined);
 
   const codeEditorSettings = useAppSelector((state) => state.CodeEditor);
   const { theme, language } = codeEditorSettings;
@@ -116,7 +116,7 @@ const BaseCodeEditor: FC = () => {
           onChange={onCodeChange}
         />
         <div className="code-editor__body__output">
-          {outputDetails !== null && <OutputWindow outputDetails={outputDetails} />}
+          <OutputWindow outputDetails={outputDetails} />
         </div>
       </div>
     </section>

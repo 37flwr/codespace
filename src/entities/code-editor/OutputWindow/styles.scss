@@ -1,9 +1,29 @@
 .output {
-  &_success {
-    color: var(--color-green);
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  &__header {
+    width: 100%;
+    position: relative;
+    height: 40px;
+    background-color: var(--dark-grey);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: var(--text-primary);
+    box-sizing: border-box;
   }
 
-  &_fail {
-    color: var(--color-red);
+  &__result {
+    &_success {
+      color: var(--color-green);
+    }
+
+    &_fail {
+      color: var(--color-red);
+    }
   }
 }
