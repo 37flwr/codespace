@@ -1,3 +1,5 @@
+@import '../../../shared/styles/mixins';
+
 .bottom-snippet {
   &_container {
     position: relative;
@@ -57,6 +59,8 @@
   justify-content: center;
   align-items: center;
 
+  @include rainbow-border(3px, 0px, 0px, 20px, 20px);
+
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -66,41 +70,5 @@
 
   a {
     z-index: 5;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 3px; /* control the border thickness */
-
-    border-radius: 0px 0px 20px 20px;
-    background: linear-gradient(
-      112.02deg,
-      #ff0000 0%,
-      #e6740b 23.96%,
-      #f0d90a 48.96%,
-      #10ee19 73.96%,
-      #b019e6 98.96%
-    );
-    -webkit-mask: linear-gradient(
-          112.02deg,
-          #ff0000 0%,
-          #e6740b 23.96%,
-          #f0d90a 48.96%,
-          #10ee19 73.96%,
-          #b019e6 98.96%
-        )
-        content-box,
-      linear-gradient(
-        112.02deg,
-        #ff0000 0%,
-        #e6740b 23.96%,
-        #f0d90a 48.96%,
-        #10ee19 73.96%,
-        #b019e6 98.96%
-      );
-    mask-composite: exclude;
-    pointer-events: none;
   }
 }
