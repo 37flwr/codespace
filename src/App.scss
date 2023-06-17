@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+@import './shared/styles/variables';
 
 * {
   margin: 0;
@@ -22,28 +23,6 @@ a {
 //   outline: 1px solid red;
 // }
 
-:root {
-  --background-primary: #d7e3fc;
-  --background-additional: #7b7d81;
-  --background-bonus: #ccdbfd;
-  --text-primary: #000;
-  --text-additional: #e2eafc;
-  --color-green: #00a300;
-  --color-red: #d10000;
-  --dark-grey: #1c1d1f;
-
-  --header-height: 110px;
-  --page-padding: 15px;
-}
-
 .text-heading {
   font-size: 25px;
-}
-
-[data-theme='dark'] {
-  --background-primary: #0e0f11;
-  --background-additional: #7b7d81;
-  --background-bonus: #343d43;
-  --text-primary: #fff;
-  --text-additional: #37393d;
 }
