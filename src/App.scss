@@ -33,6 +33,7 @@ a {
   --dark-grey: #1c1d1f;
 
   --header-height: 110px;
+  --page-padding: 15px;
 }
 
 .text-heading {
@@ -83,8 +84,4 @@ a {
     mask-composite: exclude;
     pointer-events: none;
   }
-}
-
-.no-scroll-page {
-  height: calc(100vh - var(--header-height) - 15px);
 }
