@@ -1,7 +1,9 @@
 import { type FC } from 'react';
 
+import './styles.scss';
+
 interface IOutputWindow {
-  outputDetails: {
+  outputDetails?: {
     additional_files: null;
     callback_url: null;
     cpu_extra_time: string;
@@ -17,37 +19,47 @@ interface IOutputWindow {
 }
 
 const OutputWindow: FC<IOutputWindow> = ({ outputDetails }) => {
-  const getOutput = (): JSX.Element => {
+  const getOutput = (details: {
+    additional_files: null;
+    callback_url: null;
+    cpu_extra_time: string;
+    cpu_time_limit: string;
+    status: {
+      desription: string;
+      id: number;
+    };
+    compile_output: string;
+    stdout: string;
+    stderr: string;
+  }): JSX.Element => {
     const statusId = outputDetails?.status?.id;
 
     switch (statusId) {
       case 6:
-        return <pre className="output_fail">{atob(outputDetails?.compile_output)}</pre>;
+        return <pre className="output__result_fail">{atob(details.compile_output)}</pre>;
       case 3:
         return (
-          <pre className="output_success">
-            {atob(outputDetails.stdout) !== null
-              ? `${atob(outputDetails.stdout)}`
+          <pre className="output__result_success">
+            {atob(details.stdout) !== null
+              ? `${atob(details.stdout)}`
               : 'Code executed successfully'}
           </pre>
         );
 
       case 5:
-        return <pre className="output_fail">{'Time Limit Exceeded'}</pre>;
+        return <pre className="output__result_fail">{'Time Limit Exceeded'}</pre>;
       default:
-        return <pre className="output_fail">{atob(outputDetails?.stderr)}</pre>;
+        return <pre className="output__result_fail">{atob(details.stderr)}</pre>;
     }
   };
 
   return (
-    <>
-      <h1 className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 mb-2">
-        Output
-      </h1>
-      <div className="w-full h-56 bg-[#1e293b] rounded-md text-white font-normal text-sm overflow-y-auto">
-        {getOutput()}
+    <div className="output">
+      <div className="output__header slim-rainbow-border">Compilation result</div>
+      <div className="output__result">
+        {outputDetails !== undefined && getOutput(outputDetails)}
       </div>
-    </>
+    </div>
   );
 };
 

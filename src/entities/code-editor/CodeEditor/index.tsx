@@ -1,5 +1,4 @@
 import { type FC, useState } from 'react';
-
 import Editor from '@monaco-editor/react';
 
 interface ICodeEditor {
@@ -22,8 +21,6 @@ const CodeEditor: FC<ICodeEditor> = ({ onChange, language = 'javascript', code, 
 
   return (
     <Editor
-      height="85vh"
-      width="100%"
       language={language}
       value={value}
       theme={theme}

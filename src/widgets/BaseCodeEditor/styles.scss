@@ -1,0 +1,24 @@
+.code-editor {
+  --code-editor-header-height: 40px;
+  --code-editor-gap: 15px;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--code-editor-gap);
+
+  &__body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 20px;
+    height: calc(100% - var(--code-editor-header-height) - var(--code-editor-gap));
+
+    &__aside {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-row-gap: 10px;
+      width: 100%;
+    }
+  }
+}
