@@ -9,7 +9,7 @@ const EditorPage: FC = () => {
   const memoizedTheme = useMemo(() => theme, [theme]);
 
   return (
-    <section className={classNames('editor-page editors-top', memoizedTheme)}>
+    <section className={classNames('editor-page editors-top no-scroll-page', memoizedTheme)}>
       <BaseCodeEditor />
     </section>
   );

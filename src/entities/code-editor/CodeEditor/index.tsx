@@ -21,7 +21,6 @@ const CodeEditor: FC<ICodeEditor> = ({ onChange, language = 'javascript', code, 
 
   return (
     <Editor
-      height="85vh"
       language={language}
       value={value}
       theme={theme}

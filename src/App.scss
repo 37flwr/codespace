@@ -84,3 +84,7 @@ a {
     pointer-events: none;
   }
 }
+
+.no-scroll-page {
+  height: calc(100vh - var(--header-height) - 15px);
+}

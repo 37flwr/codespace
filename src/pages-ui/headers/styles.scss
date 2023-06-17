@@ -1,6 +1,6 @@
 #header {
   width: 90vw;
-  height: 110px;
+  height: var(--header-height);
   margin: auto;
 
   transition: all 0.5s;

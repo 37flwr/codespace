@@ -115,7 +115,7 @@ const BaseCodeEditor: FC = () => {
           code={code}
           onChange={onCodeChange}
         />
-        <div className="code-editor__body__output">
+        <div className="code-editor__body__aside">
           <OutputWindow outputDetails={outputDetails} />
         </div>
       </div>
